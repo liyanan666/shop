@@ -1,8 +1,15 @@
 <template>
     <div>
         <header class="header">
-
+			
         </header>
+        <mt-swipe :auto="4000">
+		  <mt-swipe-item>
+		  	<img src="../../img/1.jpg"/>
+		  </mt-swipe-item>
+		  <mt-swipe-item><img src="../../img/1.jpg"/></mt-swipe-item>
+		  <mt-swipe-item><img src="../../img/1.jpg"/></mt-swipe-item>
+		</mt-swipe>
         <mt-tabbar v-model="selected" :fixed="isfix">
             <mt-tab-item id="主页">
                 <img slot="icon" src="../../img/shouye.png">
@@ -37,5 +44,7 @@
     }
 </script>
 <style>
-
+	.mint-swipe{
+		height: 300px;
+	}
 </style>
