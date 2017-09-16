@@ -1,57 +1,64 @@
 <template>
     <div>
-        <div class="index_header">
-			<input class="header_input" type="text" placeholder="" readonly id="picker-device">
-        </div>
-        <div class="index_banner">
-        	<mt-swipe :auto="4000">
-			  <mt-swipe-item>
-			  	<img src="../../img/timg.jpg" width="100%"/>
-			  </mt-swipe-item>
-			  <mt-swipe-item><img src="../../img/timg.jpg" width="100%"/></mt-swipe-item>
-			  <mt-swipe-item><img src="../../img/timg.jpg" width="100%"/></mt-swipe-item>
-			</mt-swipe>
-        </div>
+    	<mt-tab-container v-model="selected">
+		  <mt-tab-container-item id="tab-container1">
+		    <maincontent></maincontent>
+		  </mt-tab-container-item>
+		  
+		  <mt-tab-container-item id="tab-container2">
+		  	<classification></classification>
+		  </mt-tab-container-item>
+		  
+		  <mt-tab-container-item id="tab-container3">
+		  	<shopcart></shopcart>
+		  </mt-tab-container-item>
+		  
+		  <mt-tab-container-item id="tab-container4">
+		  </mt-tab-container-item>
+		  
+		</mt-tab-container>
+        
         <mt-tabbar v-model="selected" :fixed="isfix">
-            <mt-tab-item id="主页">
+            <mt-tab-item id="tab-container1">
                 <img slot="icon" src="../../img/shouye.png">
-                外卖
+               	 主页
             </mt-tab-item>
-            <mt-tab-item id="分类">
+            <mt-tab-item id="tab-container2">
                 <img slot="icon" src="../../img/fenlei.png">
-                订单
+               	 分类
             </mt-tab-item>
-            <mt-tab-item id="购物车">
+            <mt-tab-item id="tab-container3">
                 <img slot="icon" src="../../img/gouwuche.png">
-                发现
+               	 购物车
             </mt-tab-item>
-            <mt-tab-item id="个人中心">
+            <mt-tab-item id="tab-container4">
                 <img slot="icon" src="../../img/zhongxin.png">
-                我的
+               	 个人中心
             </mt-tab-item>
         </mt-tabbar>
     </div>
 </template>
 <script>
+	import maincontent from '../Main/Main.vue'
+	import classification from '../classification/Classification.vue'
+	import shopcart from '../shop/Shopcart.vue'
     export default {
         data() {
             return {
-                selected:"外卖",
-                isfix:true
+                selected:"tab-container1",
+                isfix:true,
             }
         },
+        created:function(){
+        	
+        },
+        components:{
+        	maincontent,
+        	classification,
+        	shopcart
+        },
         mounted:function(){
-        	var pickerDevice = myApp.picker({
-			    input: '#picker-device',
-			    
-			    value:['郑州科技学院'],
-			    cols: [
-			        {
-			            textAlign: 'center',
-			            values: ['郑州科技学院', '黄河科技学院', '郑州大学', '财经政法大学', '上海交通大学']
-			        }
-			    ]
-			});
+        	
         },
         methods: {
 
@@ -59,30 +66,5 @@
     }
 </script>
 <style scoped="scoped">
-	.index_header{
-		height: 0.8rem;
-		position: fixed;
-		background: #D90A00;
-		width: 100%;
-		top: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.index_header .header_input{
-		border: none;
-	    font-size: .3rem;
-	    background: rgba(0,0,0,0);
-	    text-align: center;
-	    color: #fff;
-	}
-	.mint-swipe{
-		height: 192px;
-	}
-	.mint-header{
-		background: #d90a00;
-	}
-	.index_banner{
-		margin-top: 0.8rem;
-	}
+	@import url("index.css");
 </style>
