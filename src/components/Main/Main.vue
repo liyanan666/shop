@@ -36,7 +36,7 @@
         </div>
         <ul class="index_list clearfix">
         	<li>
-        		<div class="list_pic">
+        		<div class="list_pic" @click="todetail">
         			<img src="../../img/local_pic.png"/>
         			<p class="list_info">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
         			<p class="list_money clearfix"><span class="red">¥666</span><span class="saled fr">已售</span></p>
@@ -44,21 +44,21 @@
         		
         	</li>
         	<li>
-        		<div class="list_pic">
+        		<div class="list_pic" @click="todetail">
         			<img src="../../img/local_pic.png"/>
         			<p class="list_info">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
         			<p class="list_money clearfix"><span class="red">¥666</span><span class="saled fr">已售</span></p>
         		</div>
         	</li>
         	<li>
-        		<div class="list_pic">
+        		<div class="list_pic" @click="todetail">
         			<img src="../../img/local_pic.png"/>
         			<p class="list_info">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
         			<p class="list_money clearfix"><span class="red">¥666</span><span class="saled fr">已售</span></p>
         		</div>
         	</li>
         	<li>
-        		<div class="list_pic">
+        		<div class="list_pic" @click="todetail">
         			<img src="../../img/local_pic.png"/>
         			<p class="list_info">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
         			<p class="list_money clearfix"><span class="red">¥666</span><span class="saled fr">已售</span></p>
@@ -91,7 +91,9 @@
 			});
         },
         methods: {
-
+            todetail:function () {
+                this.$router.push('/detail')
+            }
         }
     }
 </script>

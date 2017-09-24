@@ -79,7 +79,9 @@
                 var _this = this;
                 MessageBox.confirm('您还不是商家,确认成为商家?').then(action => {
                     _this.$router.push('/tobuess');
-                });
+                }).catch(action => {
+                    console.log('取消');
+                })
             }
         }
     }

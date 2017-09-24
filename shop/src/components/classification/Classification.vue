@@ -50,10 +50,32 @@
 				</div>
 			</li>
 		</ul>
+        <bottomnav :attribute="'class'"></bottomnav>
 	</div>
 </template>
 
 <script>
+    import bottomnav from '../public/Bottom.vue'
+    export default {
+        data() {
+            return {
+
+            }
+        },
+
+        created:function(){
+
+        },
+        components:{
+            bottomnav
+        },
+        mounted:function(){
+
+        },
+        methods: {
+
+        }
+    }
 </script>
 
 <style scoped="scoped">

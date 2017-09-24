@@ -3,6 +3,7 @@ import Vue from 'vue'
 //模板
 
 const index = resolve => require(['../components/index/Index.vue'], resolve)
+const detail = resolve => require(['../components/detail/Details.vue'], resolve)
 const classification = resolve => require(['../components/classification/Classification.vue'], resolve)
 const personal = resolve => require(['../components/Personal/PersonalCenter.vue'], resolve)
 const shop = resolve => require(['../components/shop/Shopcart.vue'], resolve)
@@ -45,6 +46,11 @@ const routes = [
         path: '/regiest',
         name:'regiest',
         component: regiest,
+    },
+    {
+        path: '/detail',
+        name:'detail',
+        component: detail,
     },
     {
         path: '*',

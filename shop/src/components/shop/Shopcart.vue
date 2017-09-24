@@ -107,17 +107,33 @@
        	<span class="shop_One">合计&nbsp&nbsp&nbsp<span>¥256</span></span>
        	<span class="shop_Two">去结算</span>
        </div>
+        <bottomnav :attribute="'shop'"></bottomnav>
 	</div>
 </template>
 
 <script>
-	export default{
-		data(){
-			return {
-				shopnum:0
-			}
-		}
-	}
+    import bottomnav from '../public/Bottom.vue'
+    export default {
+        data() {
+            return {
+                shopnum:0
+            }
+        },
+
+        created:function(){
+
+        },
+        components:{
+            bottomnav
+        },
+        mounted:function(){
+
+        },
+        methods: {
+
+        }
+    }
+
 </script>
 
 <style>

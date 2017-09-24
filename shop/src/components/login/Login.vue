@@ -1,16 +1,25 @@
 <template>
-	<div>
+	<div class="log_body">
 		<mt-header title="登录">
 		  <router-link to="/index" slot="left">
 		    <mt-button icon="back"></mt-button>
 		  </router-link>
 		</mt-header>
 		<div>
-			<mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
+			<div class="log_regist">
+                <span class="usr_name">用户名</span>
+                <span class="usr_input"><input type="text" placeholder="请输入用户名"></span>
+            </div>
+            <div class="log_regist">
+                <span class="usr_name">密码</span>
+                <span class="usr_input"><input type="text" placeholder="请输入密码"></span>
+            </div>
+            <div class="log_btn">登录</div>
+            <p class="clearfix log_info"><span class="fl">忘记密码?</span><span class="fr" @click="rightnowregist">立即注册</span></p>
+            <p class="log_text"><span class="log_line"></span><span class="log_hh">使用合作网站登录</span><span class="log_line"></span></p>
+            <p class="log_icon"><span class="wx"><img src="../../img/weixin.jpg" width="100%" alt=""></span></p>
 		</div>
-		<div style="margin-top: 0.5rem;">
-			<mt-field label="密码" placeholder="请输入密码" type="email" v-model="email"></mt-field>
-		</div>
+
 
 	</div>
 </template>
@@ -22,7 +31,12 @@
 				username:'',
 				email:''
 			}
-		}
+		},
+        methods:{
+            rightnowregist:function () {
+                this.$router.push('/regiest');
+            }
+        }
 	}
 </script>
 
