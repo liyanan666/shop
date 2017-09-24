@@ -35,7 +35,7 @@
 		</div>
 		<div style="margin-top: 0.3rem">
 			
-			<div>
+			<div @click="tobuess">
 				<mt-cell title="成为商家" :is-link="link">
 				  <img slot="icon" src="../../img/shangjia.png" width="24" height="24">
 				</mt-cell>
@@ -51,20 +51,38 @@
 				</mt-cell>
 			</div>
 		</div>
+        <bottomnav :attribute="'person'"></bottomnav>
 	</div>	
 </template>
 
 <script>
-	export default{
-		data(){
-			return{
-				link:true
-			}
-		},
-		mounted:function(){
-			console.log(12456)
-		}
-	}
+    import bottomnav from '../public/Bottom.vue'
+    import { MessageBox } from 'mint-ui';
+    export default {
+        data() {
+            return {
+                link:true
+            }
+        },
+
+        created:function(){
+
+        },
+        components:{
+            bottomnav
+        },
+        mounted:function(){
+
+        },
+        methods: {
+            tobuess:function () {
+                var _this = this;
+                MessageBox.confirm('您还不是商家,确认成为商家?').then(action => {
+                    _this.$router.push('/tobuess');
+                });
+            }
+        }
+    }
 </script>
 
 <style>

@@ -5,11 +5,13 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
 import router from './router/routerconfig.js'
+import store from './store/store'
 
 Vue.use(MintUI)
 
 new Vue({
-  el: '#app',
-  router,
-  render: h => h(App)
+    el: '#app',
+    router,
+    store,
+    render: h => h(App)
 })
