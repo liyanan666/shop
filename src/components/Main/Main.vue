@@ -27,7 +27,7 @@
         	</span>
         	<span class="navicon4">
         		<img src="../../img/ershou1.png"/>
-        		<p class="nav_title">二手</p>
+        		<p class="nav_title">其他</p>
         	</span>
         </div>
         <!--neirong-->

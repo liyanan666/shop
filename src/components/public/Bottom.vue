@@ -7,7 +7,7 @@
             </mt-tab-item>
             <mt-tab-item id="class">
                 <img slot="icon" src="../../img/fenlei.png">
-                分类
+                消息
             </mt-tab-item>
             <mt-tab-item id="shop">
                 <img slot="icon" src="../../img/gouwuche.png">
