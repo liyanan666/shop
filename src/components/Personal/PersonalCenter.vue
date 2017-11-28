@@ -4,7 +4,7 @@
 			<div class="my_back">
 				
 			</div>
-			<div class="my_touxiang">
+			<div class="my_touxiang" @click="topersoninfo">
 				<img src="../../img/touxiang.jpg"/>
 				
 			</div>
@@ -82,6 +82,9 @@
                 }).catch(action => {
                     console.log('取消');
                 })
+            },
+            topersoninfo:function () {
+                this.$router.push('/personinfo');
             }
         }
     }

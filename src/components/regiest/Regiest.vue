@@ -19,10 +19,6 @@
                 <span class="usr_input"><input type="text" placeholder="请输入密码"></span>
             </div>
             <div class="log_regist">
-                <span class="usr_name">手机号</span>
-                <span class="usr_input"><input type="text" placeholder="请输入手机号"></span>
-            </div>
-            <div class="log_regist">
                 <span class="usr_name">所在学校</span>
                 <span class="usr_input"><input type="text" id="regiest" placeholder=""></span>
             </div>
