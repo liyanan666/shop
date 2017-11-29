@@ -7,7 +7,6 @@
 	       	<ul class="shop_list">
 	            <li>
 	                <label class="label-checkbox item-content">
-	                    <!-- Checked by default -->
 	                    <input type="checkbox" name="my-checkbox" value="Books" checked="checked">
 	                    <div class="item-media">
 	                        <i class="icon icon-form-checkbox"></i>
@@ -21,7 +20,7 @@
 	                        	<p class="car_info">400g*10礼盒</p>
 	                        	<p class="car_money"><span>¥186</span><span>¥356<span class="midline"></span></span></p>
 	                        	<p class="clearfix cart_info">
-	                        		<span class="cart_plus">-</span>
+	                        		<span class="cart_plus" @click.prevent="hh">-</span>
 	                        		<span class="cart_num">{{shopnum}}</span>
 	                        		<span class="cart_minus">+</span>
 	                        	</p>
@@ -130,7 +129,9 @@
 
         },
         methods: {
-
+			hh(){
+			    console.log(123456)
+			}
         }
     }
 

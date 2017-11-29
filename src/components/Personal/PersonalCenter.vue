@@ -8,6 +8,7 @@
 				<img src="../../img/touxiang.jpg"/>
 				
 			</div>
+
 			<p class="my_name" v-show="1==2">知 足</p>
 			<p class="my_name" @click="$router.push('/login')">登录/注册</p>
 		</div>

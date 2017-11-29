@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="index_header">
-			<input class="header_input" type="text" placeholder="请选择学校" readonly id="picker-device">
+			<input @click="collageVisible=true" class="header_input" type="text" placeholder="请选择学校" readonly v-model="school">
         </div>
         <div class="index_banner">
         	<mt-swipe :auto="4000">
@@ -65,6 +65,10 @@
         		</div>
         	</li>
         </ul>
+		<mt-popup position="bottom" v-model="collageVisible" popup-transition="popup-fade">
+			<div class="popupheader clearfix"><span class="fl" @click="collageVisible=false">取消</span><span class="fr" @click="savecollage">保存</span></div>
+			<mt-picker :slots="collageslots" @change="onCollageChange"></mt-picker>
+		</mt-popup>
 	</div>
 </template>
 
@@ -73,30 +77,50 @@
         data() {
             return {
                 isfix:true,
+                school:'郑州科技学院',
+                modelschool:'',
+                collageVisible:false,
+                collageslots: [
+                    {
+                        values: ['郑州科技学院', '黄河科技学院', '郑州大学', '财经政法大学', '上海交通大学'],
+                        textAlign: 'center'
+                    }
+                ],
             }
         },
         created:function(){
         	
         },
         mounted:function(){
-        	var pickerDevice = myApp.picker({
-			    input: '#picker-device',
-			    value:['郑州科技学院'],
-			    cols: [
-			        {
-			            textAlign: 'center',
-			            values: ['郑州科技学院', '黄河科技学院', '郑州大学', '财经政法大学', '上海交通大学']
-			        }
-			    ]
-			});
+
         },
         methods: {
             todetail:function () {
                 this.$router.push('/detail')
-            }
+            },
+            onCollageChange(picker, values){
+                this.modelschool = values.toString();
+            },
+            savecollage(){
+                this.school = this.modelschool;
+                this.collageVisible = false;
+			}
         }
     }
 </script>
 
 <style>
+	.mint-popup-bottom{
+		width: 100%;
+	}
+	.popupheader{
+		height:.8rem;
+		border-bottom: 1px solid #f8f8f8;
+	}
+	.popupheader span{
+		margin: 0 .3rem ;
+		font-size:.3rem;
+		color: #26a2ff;
+		line-height: .8rem;
+	}
 </style>
