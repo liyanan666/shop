@@ -73,37 +73,7 @@
             }
         },
         mounted:function(){
-            var _this = this;
-            var pickerDevice = myApp.picker({
-                input: '#tobuesschool',
-                value:['郑州科技学院'],
-                cols: [
-                    {
-                        textAlign: 'center',
-                        values: ['郑州科技学院', '黄河科技学院', '郑州大学', '财经政法大学', '上海交通大学']
-                    }
-                ]
-            });
-            var pickersex = myApp.picker({
-                input: '#tobuessex',
-                value:['男'],
-                cols: [
-                    {
-                        textAlign: 'center',
-                        values: ['男', '女']
-                    }
-                ]
-            });
-            var beurn_date =  myApp.calendar({  //起保日期
-                input: '#beurn_date',
-                dateFormat: 'yyyy-mm-dd',
-                dayNamesShort:['日', '一', '二', '三', '四', '五', '六'],
-                monthNames:['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月' , '九月' , '十月', '十一月', '十二月'],
-                onDayClick:function(p, dayContainer, year, month, day){
 
-                    beurn_date.close();
-                }
-            });
         },
     }
 </script>
@@ -117,6 +87,7 @@
         width: 100%;
         position: fixed;
         top:0;
+        z-index: 100;
     }
     .tobus_content{
         margin-top: 40px;
