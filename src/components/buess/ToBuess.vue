@@ -1,7 +1,7 @@
 <template>
     <div class="log_body">
         <mt-header title="成为商家">
-            <router-link to="/login" slot="left">
+            <router-link to="/personal" slot="left">
                 <mt-button icon="back"></mt-button>
             </router-link>
         </mt-header>
