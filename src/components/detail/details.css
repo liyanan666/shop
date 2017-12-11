@@ -1,0 +1,207 @@
+.detail_img{
+    position: relative;
+    height:350px;
+}
+.detail_back{
+    top:0.3rem;
+    left:0.3rem;
+    width: .5rem;
+    position: absolute;
+}
+.detail_back img{
+    width: 100%;
+}
+.detail_info{
+    padding-left: .3rem;
+    background: #fff;
+}
+.detail_info .info_title{
+    line-height: 1rem;
+    font-size: .3rem;
+}
+.detail_info .info_money{
+    color: #FF0036;
+    font-size: .4rem;
+}
+.detail_info .info_text{
+    background-color: #fb6878;
+    color: #FFF;
+    padding: 2px 3px;
+}
+.detail_info .info_active{
+    color: #999;
+    margin: .3rem 0.1rem 0 0;
+    padding-bottom: .3rem;
+}
+.detail_info .info_address{
+    float: right;
+}
+.detail_commond{
+    background: #fff;
+    margin-top: .3rem;
+    padding-top: .3rem;
+    position: relative;
+}
+.commont_title{
+    font-size: 14px;
+    color: #666;
+    margin-left: .3rem;
+}
+.detail_commond .commont_tag{
+    width: 6rem;
+    margin-top: .2rem;
+}
+.detail_commond .commont_tag span{
+    float: left;
+    background-color: #FEE;
+    color: #666;
+    margin: .1rem 0 .1rem .3rem;
+    padding: 6px 9px;
+    text-align: center;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    font-size: 12px;
+}
+.commont_content{
+    padding: .3rem;
+}
+.commont_content .content_title{
+    display: flex;
+    align-items: center;
+    margin-bottom: .2rem;
+}
+.commont_content .content_nickname{
+    margin-left: .2rem;
+}
+.commont_content .content_content{
+    line-height: .3rem;
+}
+.commont_content .content_data{
+    margin: .3rem 0;
+}
+.commont_findmore{
+    text-align: center;
+}
+.commont_findmore span{
+    display: inline-block;
+    padding: .15rem .3rem;
+    border:1px solid #d9d9d9;
+    text-align: center;
+    margin: .2rem auto;
+}
+.shop{
+    background: #fff;
+    margin-top: .2rem;
+    padding: .3rem;
+}
+.shop .shop_icon{
+    width: 1rem;
+    height:1rem;
+    display: inline-block;
+    float: left;
+}
+.shop .shop_icon img{
+    width: 100%;
+    height: 100%;
+}
+.shop .shop_info{
+    height:1rem;
+    float: left;
+    display: inline-block;
+    position: relative;
+}
+.shop .shp_name{
+    margin-left: .1rem;
+    vertical-align: sub;
+    font-size:.3rem;
+}
+.shop .fen{
+    position: absolute;
+    bottom:0;
+    left:.1rem;
+    color: #999;
+}
+.shop .fen span{
+    color: red;
+}
+.shop .into_shop{
+    width: 95%;
+    height:.7rem;
+    border:1px solid #d9d9d9;
+    border-radius: 8px;
+    text-align: center;
+    line-height: .7rem;
+    margin: 0.4rem auto 0 auto;
+
+}
+.into_shop .into_shop_icon{
+    width: .5rem;
+    height:.5rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+.into_shop_icon img{
+    width: 100%;
+    height:100%;
+}
+.viewmore{
+    background: #fff;
+    margin-top: .2rem;
+    padding: .2rem;
+}
+.viewmore .morelist{
+    margin-top: .2rem;
+    display: flex;
+}
+.viewmore .morelist li{
+    flex:1;
+    padding: 0 .1rem;
+}
+.morelist li .list_pic{
+    border: 1px solid #eee;
+}
+.morelist li .list_pic img{
+    width: 100%;
+}
+.morelist .list_title{
+    margin: .1rem 0;
+    height:.5rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.list_moenys .price{
+    color: red;
+}
+.product_details{
+    background: #fff;
+    margin-top: .2rem;
+    margin-bottom: 1.5rem;
+}
+.product_details .title{
+    height:.8rem;
+    text-align: center;
+    line-height: .8rem;
+}
+.pay{
+    height:1rem;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+.pay li{
+    flex:1;
+    padding: .1rem 0;
+    background: #fff;
+    text-align: center;
+}
+.pay .addshopcar{
+    flex:3;
+    line-height: .9rem;
+    color: #fff;
+    font-size:.3rem;
+    background: #FF9500;
+}

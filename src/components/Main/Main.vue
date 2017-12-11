@@ -110,17 +110,8 @@
 </script>
 
 <style>
-	.mint-popup-bottom{
-		width: 100%;
+	.index_banner{
+		height:181px;
 	}
-	.popupheader{
-		height:.8rem;
-		border-bottom: 1px solid #f8f8f8;
-	}
-	.popupheader span{
-		margin: 0 .3rem ;
-		font-size:.3rem;
-		color: #26a2ff;
-		line-height: .8rem;
-	}
+
 </style>

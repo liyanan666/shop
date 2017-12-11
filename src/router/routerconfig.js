@@ -12,6 +12,7 @@ const shop = resolve => require(['../components/shop/Shopcart.vue'], resolve)
 const login = resolve => require(['../components/login/Login.vue'], resolve)
 const regiest = resolve => require(['../components/regiest/Regiest.vue'], resolve)
 const tobuess = resolve => require(['../components/buess/ToBuess.vue'], resolve)
+const addproduct = resolve => require(['../components/buess/AddProduct.vue'], resolve)
 Vue.use(VueRouter);
 //配置路由
 const routes = [
@@ -42,6 +43,11 @@ const routes = [
         path: '/tobuess',
         name:'tobuess',
         component: tobuess,
+    },
+    {
+        path: '/addproduct',
+        name:'addproduct',
+        component: addproduct,
     },
     {
         path: '/login',

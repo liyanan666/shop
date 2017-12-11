@@ -81,7 +81,9 @@
                 MessageBox.confirm('您还不是商家,确认成为商家?').then(action => {
                     _this.$router.push('/tobuess');
                 }).catch(action => {
-                    console.log('取消');
+
+                    _this.$router.push('/addproduct');
+                    console.log('addproduct');
                 })
             },
             topersoninfo:function () {
