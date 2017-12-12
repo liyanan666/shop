@@ -13,8 +13,11 @@
             
             <div class="log_regist">
                 <span class="usr_name">商品价格</span>
-                <span class="usr_input"><input type="text" placeholder=""></span>
-                <span>元</span>
+                <span class="usr_input">
+                    <input type="number" placeholder="" style="width:2rem;">
+                    <span style="font-size: .3rem;vertical-align: middle">元</span>
+                </span>
+
             </div>
             <div class="log_regist">
                 <span class="usr_name noneline">商品分类</span>
@@ -25,7 +28,15 @@
                 <span class="usr_input"><input @click="baoyouVisible=true" readonly type="text" id="tobuessex" placeholder="请选择是否包邮"></span>
             </div>
             <div class="log_regist">
-                <span class="usr_name" style="border-right: none">导航图片</span>
+                <span class="usr_name">运费</span>
+                <span class="usr_input">
+                    <input type="number" placeholder="" style="width:2rem;">
+                    <span style="font-size: .3rem;vertical-align: middle">元</span>
+                </span>
+
+            </div>
+            <div class="log_regist">
+                <span class="usr_name" style="border-right: none">商品图片</span>
                 <span class="usr_input">
                     <img class="upload" src="../../img/upload.png" alt="">
                 </span>

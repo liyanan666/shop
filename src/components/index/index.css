@@ -61,10 +61,10 @@
     background: #f6f6f6;
 }
 .index_list li{
-	width: 46%;
-    float: left;
-    background: #f6f6f6;
-    margin: 2%;
+	width: 48%;
+	float: left;
+	background: #f6f6f6;
+	margin: 1%;
 }
 .index_list .list_pic{
     margin: 0 auto;

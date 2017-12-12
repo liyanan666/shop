@@ -2,6 +2,7 @@
 	<div>
 		<div class="index_header">
 			<input @click="collageVisible=true" class="header_input" type="text" placeholder="请选择学校" readonly v-model="school">
+			<router-link to="search" style="position: absolute;right: .4rem"><img src="../../img/search.png" width="23px"></router-link>
         </div>
         <div class="index_banner">
         	<mt-swipe :auto="4000">
@@ -77,6 +78,7 @@
         data() {
             return {
                 isfix:true,
+				serachval:'',
                 school:'郑州科技学院',
                 modelschool:'',
                 collageVisible:false,

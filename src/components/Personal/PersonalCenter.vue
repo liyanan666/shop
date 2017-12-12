@@ -41,6 +41,11 @@
 				  <img slot="icon" src="../../img/shangjia.png" width="24" height="24">
 				</mt-cell>
 			</div>
+			<div @click="isbuess">
+				<mt-cell title="我是商家" :is-link="link">
+					<img slot="icon" src="../../img/shangjia.png" width="24" height="24">
+				</mt-cell>
+			</div>
 			<div>
 				<mt-cell title="收货地址" :is-link="link">
 				  <img slot="icon" src="../../img/shouhuodizhi.png" width="24" height="24">
@@ -82,12 +87,15 @@
                     _this.$router.push('/tobuess');
                 }).catch(action => {
 
-                    _this.$router.push('/addproduct');
+
                     console.log('addproduct');
                 })
             },
             topersoninfo:function () {
                 this.$router.push('/personinfo');
+            },
+			isbuess:function () {
+                this.$router.push('/buessDetail');
             }
         }
     }

@@ -18,12 +18,11 @@
 	                        <div class="shop_content">
 	                        	<p class="car_title">呼吸套装礼盒呼吸套</p>
 	                        	<p class="car_info">400g*10礼盒</p>
-	                        	<p class="car_money"><span>¥186</span><span>¥356<span class="midline"></span></span></p>
-	                        	<p class="clearfix cart_info">
-	                        		<span class="cart_plus" @click.prevent="hh">-</span>
-	                        		<span class="cart_num">{{shopnum}}</span>
-	                        		<span class="cart_minus">+</span>
-	                        	</p>
+								<p class="car_money">
+									<span>¥186</span>
+									<span>¥356<span class="midline"></span></span>
+									<span style="float: right;font-size: .25rem">X1</span>
+								</p>
 	                        </div>
 	                    </div>
 	                </label>
@@ -42,12 +41,11 @@
 	                        <div class="shop_content">
 	                        	<p class="car_title">呼吸套装礼盒呼吸套装礼盒</p>
 	                        	<p class="car_info">400g*10礼盒</p>
-	                        	<p class="car_money"><span>¥186</span><span>¥356<span class="midline"></span></span></p>
-	                        	<p class="clearfix cart_info">
-	                        		<span class="cart_plus">-</span>
-	                        		<span class="cart_num">{{shopnum}}</span>
-	                        		<span class="cart_minus">+</span>
-	                        	</p>
+								<p class="car_money">
+									<span>¥186</span>
+									<span>¥356<span class="midline"></span></span>
+									<span style="float: right;font-size: .25rem">X1</span>
+								</p>
 	                        </div>
 	                    </div>
 	                </label>
@@ -66,12 +64,11 @@
 	                        <div class="shop_content">
 	                        	<p class="car_title">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
 	                        	<p class="car_info">400g*10礼盒</p>
-	                        	<p class="car_money"><span>¥186</span><span>¥356<span class="midline"></span></span></p>
-	                        	<p class="clearfix cart_info">
-	                        		<span class="cart_plus">-</span>
-	                        		<span class="cart_num">{{shopnum}}</span>
-	                        		<span class="cart_minus">+</span>
-	                        	</p>
+								<p class="car_money">
+									<span>¥186</span>
+									<span>¥356<span class="midline"></span></span>
+									<span style="float: right;font-size: .25rem">X1</span>
+								</p>
 	                        </div>
 	                    </div>
 	                </label>
@@ -90,12 +87,12 @@
 	                        <div class="shop_content">
 	                        	<p class="car_title">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
 	                        	<p class="car_info">400g*10礼盒</p>
-	                        	<p class="car_money"><span>¥186</span><span>¥356<span class="midline"></span></span></p>
-	                        	<p class="clearfix cart_info">
-	                        		<span class="cart_plus">-</span>
-	                        		<span class="cart_num">{{shopnum}}</span>
-	                        		<span class="cart_minus">+</span>
-	                        	</p>
+	                        	<p class="car_money">
+									<span>¥186</span>
+									<span>¥356<span class="midline"></span></span>
+									<span style="float: right;font-size: .25rem">X1</span>
+								</p>
+	                        	
 	                        </div>
 	                    </div>
 	                </label>

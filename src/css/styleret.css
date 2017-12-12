@@ -110,3 +110,6 @@ a:active {star:expression(this.onFocus=this.blur());}
 	color: #26a2ff;
 	line-height: .8rem;
 }
+.mint-search{
+	height: auto !important;
+}
