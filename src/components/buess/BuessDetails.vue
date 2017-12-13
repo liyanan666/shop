@@ -14,8 +14,10 @@
         </div>
         <ul class="buess_caozuo clearfix">
             <li>
-                <div class="icon blue"><img src="../../img/fabushangpin2.png" alt=""></div>
-                <p>发布商品</p>
+                <router-link to="addproduct">
+                    <div class="icon blue"><img src="../../img/fabushangpin2.png" alt=""></div>
+                    <p>发布商品</p>
+                </router-link>
             </li>
             <li>
                 <div class="icon juhuang"><img src="../../img/dingdanguanli.png" alt=""></div>
@@ -29,7 +31,9 @@
         data() {
             return {}
         },
-        methods: {}
+        methods: {
+
+        }
     }
 </script>
 <style scoped>

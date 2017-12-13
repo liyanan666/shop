@@ -17,24 +17,19 @@
                     <input type="number" placeholder="" style="width:2rem;">
                     <span style="font-size: .3rem;vertical-align: middle">元</span>
                 </span>
-
+            </div>
+            <div class="log_regist">
+                <span class="usr_name">促销价格</span>
+                <span class="usr_input">
+                    <input type="number" placeholder="" style="width:2rem;">
+                    <span style="font-size: .3rem;vertical-align: middle">元</span>
+                </span>
             </div>
             <div class="log_regist">
                 <span class="usr_name noneline">商品分类</span>
                 <span class="usr_input"><input @click="fenleiVisible=true" readonly type="text" id="beurn_date" placeholder="请选择分类"></span>
             </div>
-            <div class="log_regist">
-                <span class="usr_name noneline">是否包邮</span>
-                <span class="usr_input"><input @click="baoyouVisible=true" readonly type="text" id="tobuessex" placeholder="请选择是否包邮"></span>
-            </div>
-            <div class="log_regist">
-                <span class="usr_name">运费</span>
-                <span class="usr_input">
-                    <input type="number" placeholder="" style="width:2rem;">
-                    <span style="font-size: .3rem;vertical-align: middle">元</span>
-                </span>
 
-            </div>
             <div class="log_regist">
                 <span class="usr_name" style="border-right: none">商品图片</span>
                 <span class="usr_input">
@@ -58,10 +53,7 @@
             <div class="popupheader clearfix"><span class="fl" @click="fenleiVisible=false">取消</span><span class="fr" @click="savecollage">保存</span></div>
             <mt-picker :slots="fenlei" @change="onCollageChange"></mt-picker>
         </mt-popup>
-        <mt-popup position="bottom" v-model="baoyouVisible" popup-transition="popup-fade">
-            <div class="popupheader clearfix"><span class="fl" @click="baoyouVisible=false">取消</span><span class="fr" @click="savecollage">保存</span></div>
-            <mt-picker :slots="baoyou" @change="onCollageChange"></mt-picker>
-        </mt-popup>
+
     </div>
 </template>
 
@@ -79,12 +71,7 @@
                         textAlign: 'center'
                     }
                 ],
-                baoyou:[
-                    {
-                        values: ['是','否'],
-                        textAlign: 'center'
-                    }
-                ]
+
             }
         },
         mounted:function(){

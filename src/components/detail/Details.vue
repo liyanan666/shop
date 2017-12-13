@@ -23,7 +23,6 @@
                 <span class="info_text">卖家促销</span>
             </p>
             <p class="clearfix info_active">
-                <span class="">满88包邮(10kg内)</span>
                 <span class="info_xiaoliang">月销量 70498件</span>
                 <span class="info_address">上海交通大学</span>
             </p>
