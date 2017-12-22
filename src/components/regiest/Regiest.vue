@@ -8,26 +8,26 @@
         <div>
             <div class="log_regist">
                 <span class="usr_name">用户名</span>
-                <span class="usr_input"><input type="text" placeholder="请输入用户名"></span>
+                <span class="usr_input"><input type="text" placeholder="请输入用户名" v-model="username"></span>
             </div>
             <div class="log_regist">
                 <span class="usr_name">密码</span>
-                <span class="usr_input"><input type="password" placeholder="请输入密码"></span>
+                <span class="usr_input"><input type="password" placeholder="请输入密码" v-model="psw"></span>
             </div>
             <div class="log_regist">
                 <span class="usr_name">确认密码</span>
-                <span class="usr_input"><input type="password" placeholder="请输入密码"></span>
+                <span class="usr_input"><input type="password" placeholder="请输入密码" v-model="psw2"></span>
             </div>
             <div class="log_regist">
                 <span class="usr_name">验证码</span>
-                <span class="usr_input"><input type="text" placeholder="请输入验证码"></span>
+                <span class="usr_input"><input type="text" placeholder="请输入验证码" v-model="code"></span>
                 <span><img src="../../img/1.jpg" width="100" style="height: 1rem;position: absolute;right: 0;top: 0;" alt=""></span>
             </div>
             <div class="log_regist">
                 <span class="usr_name">所在学校</span>
                 <span class="usr_input" @click="collageVisible=true"><input readonly type="text" v-model="school" placeholder=""></span>
             </div>
-            <div class="log_btn">确认注册</div>
+            <div class="log_btn" @click="regist">确认注册</div>
 
         </div>
         <mt-popup position="bottom" v-model="collageVisible" popup-transition="popup-fade">
@@ -44,6 +44,9 @@
         data(){
             return {
                 username:'',
+                psw:'',
+                psw2:'',
+                code:'',
                 email:'',
                 school:'郑州科技学院',
                 modelschool:'',
@@ -57,9 +60,6 @@
                 ],
             }
         },
-        mounted:function(){
-
-        },
         methods:{
             onCollageChange(picker, values){
                 this.modelschool = values.toString();
@@ -67,6 +67,44 @@
             savecollage(){
                 this.school = this.modelschool;
                 this.collageVisible = false;
+            },
+            regist(){
+            	var _this = this;
+            	if(this.psw != this.psw2){
+            		MessageBox('提示', "密码不一致，请重新输入");
+            		return;
+            	}
+            	if(this.psw!="" && this.username!="" && this.psw2!="" && this.code!=""){
+            		$.ajax({
+	            		type:"post",
+	            		url:"http://10.0.0.12:3000/registuser",
+	            		async:true,
+	            		data:{
+	            			username : this.username,
+		            		password : this.psw,
+		            		code : this.code,
+		            		school:this.school,
+		            		age:"",//年龄
+	                        phone:"",//电话
+	                        sex:"",//性别
+	                        nickname:"",//昵称
+	                        email:"",//邮箱
+	                        introduction:"",//简介
+	                        headportrait:""      //头像
+	            		},
+	            		success:function(data){
+	            			if(data.code == -1){
+	            				MessageBox('提示', data.info);
+	            				return;
+	            			}
+	            			_this.$router.push('/login');
+	            		}
+	            	});
+            	}else{
+            		MessageBox('提示', "请完善信息");
+            		return;
+            	}
+            	
             }
         }
     }
