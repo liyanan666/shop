@@ -73,3 +73,43 @@ a:active {star:expression(this.onFocus=this.blur());}
 	height: 100%;
     line-height: 0.88rem;
 }
+.index_header{
+	height: 0.8rem;
+	position: fixed;
+	background: #D90A00;
+	width: 100%;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 30;
+	color: #fff;
+	font-size: 0.3rem;
+}
+.index_header .header_input{
+	border: none;
+	font-size: .3rem;
+	background: rgba(0,0,0,0);
+	text-align: center;
+	color: #fff;
+}
+.mint-header{
+	background-color: #d90a00 !important;
+}
+
+.mint-popup-bottom{
+	width: 100%;
+}
+.popupheader{
+	height:.8rem;
+	border-bottom: 1px solid #f8f8f8;
+}
+.popupheader span{
+	margin: 0 .3rem ;
+	font-size:.3rem;
+	color: #26a2ff;
+	line-height: .8rem;
+}
+.mint-search{
+	height: auto !important;
+}

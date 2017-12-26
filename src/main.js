@@ -6,6 +6,8 @@ import 'mint-ui/lib/style.css'
 
 import router from './router/routerconfig.js'
 import store from './store/store'
+import global from './components/Global.vue'
+Vue.prototype.GLOBAL = global
 
 Vue.use(MintUI)
 

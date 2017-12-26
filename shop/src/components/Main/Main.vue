@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<div class="index_header">
-			<input class="header_input" type="text" placeholder="请选择学校" readonly id="picker-device">
+			<input @click="collageVisible=true" class="header_input" type="text" placeholder="请选择学校" readonly v-model="school">
+			<router-link to="search" style="position: absolute;right: .4rem"><img src="../../img/search.png" width="23px"></router-link>
         </div>
         <div class="index_banner">
         	<mt-swipe :auto="4000">
@@ -27,7 +28,7 @@
         	</span>
         	<span class="navicon4">
         		<img src="../../img/ershou1.png"/>
-        		<p class="nav_title">二手</p>
+        		<p class="nav_title">其他</p>
         	</span>
         </div>
         <!--neirong-->
@@ -36,7 +37,7 @@
         </div>
         <ul class="index_list clearfix">
         	<li>
-        		<div class="list_pic">
+        		<div class="list_pic" @click="todetail">
         			<img src="../../img/local_pic.png"/>
         			<p class="list_info">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
         			<p class="list_money clearfix"><span class="red">¥666</span><span class="saled fr">已售</span></p>
@@ -44,27 +45,31 @@
         		
         	</li>
         	<li>
-        		<div class="list_pic">
+        		<div class="list_pic" @click="todetail">
         			<img src="../../img/local_pic.png"/>
         			<p class="list_info">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
         			<p class="list_money clearfix"><span class="red">¥666</span><span class="saled fr">已售</span></p>
         		</div>
         	</li>
         	<li>
-        		<div class="list_pic">
+        		<div class="list_pic" @click="todetail">
         			<img src="../../img/local_pic.png"/>
         			<p class="list_info">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
         			<p class="list_money clearfix"><span class="red">¥666</span><span class="saled fr">已售</span></p>
         		</div>
         	</li>
         	<li>
-        		<div class="list_pic">
+        		<div class="list_pic" @click="todetail">
         			<img src="../../img/local_pic.png"/>
         			<p class="list_info">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
         			<p class="list_money clearfix"><span class="red">¥666</span><span class="saled fr">已售</span></p>
         		</div>
         	</li>
         </ul>
+		<mt-popup position="bottom" v-model="collageVisible" popup-transition="popup-fade">
+			<div class="popupheader clearfix"><span class="fl" @click="collageVisible=false">取消</span><span class="fr" @click="savecollage">保存</span></div>
+			<mt-picker :slots="collageslots" @change="onCollageChange"></mt-picker>
+		</mt-popup>
 	</div>
 </template>
 
@@ -73,28 +78,42 @@
         data() {
             return {
                 isfix:true,
+				serachval:'',
+                school:'郑州科技学院',
+                modelschool:'',
+                collageVisible:false,
+                collageslots: [
+                    {
+                        values: ['郑州科技学院', '黄河科技学院', '郑州大学', '财经政法大学', '上海交通大学'],
+                        textAlign: 'center'
+                    }
+                ],
             }
         },
         created:function(){
         	
         },
         mounted:function(){
-        	var pickerDevice = myApp.picker({
-			    input: '#picker-device',
-			    value:['郑州科技学院'],
-			    cols: [
-			        {
-			            textAlign: 'center',
-			            values: ['郑州科技学院', '黄河科技学院', '郑州大学', '财经政法大学', '上海交通大学']
-			        }
-			    ]
-			});
+
         },
         methods: {
-
+            todetail:function () {
+                this.$router.push('/detail')
+            },
+            onCollageChange(picker, values){
+                this.modelschool = values.toString();
+            },
+            savecollage(){
+                this.school = this.modelschool;
+                this.collageVisible = false;
+			}
         }
     }
 </script>
 
 <style>
+	.index_banner{
+		height:181px;
+	}
+
 </style>

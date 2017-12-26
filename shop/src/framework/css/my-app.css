@@ -60,3 +60,6 @@ i.tabbar-demo-icon-4 {
 	position: fixed;
 	bottom: 0;
 }
+.list-block .item-content{
+    background: #fff !important;
+}

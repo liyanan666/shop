@@ -4,10 +4,11 @@
 			<div class="my_back">
 				
 			</div>
-			<div class="my_touxiang">
+			<div class="my_touxiang" @click="topersoninfo">
 				<img src="../../img/touxiang.jpg"/>
 				
 			</div>
+
 			<p class="my_name" v-show="1==2">知 足</p>
 			<p class="my_name" @click="$router.push('/login')">登录/注册</p>
 		</div>
@@ -38,6 +39,11 @@
 			<div @click="tobuess">
 				<mt-cell title="成为商家" :is-link="link">
 				  <img slot="icon" src="../../img/shangjia.png" width="24" height="24">
+				</mt-cell>
+			</div>
+			<div @click="isbuess">
+				<mt-cell title="我是商家" :is-link="link">
+					<img slot="icon" src="../../img/shangjia.png" width="24" height="24">
 				</mt-cell>
 			</div>
 			<div>
@@ -79,7 +85,17 @@
                 var _this = this;
                 MessageBox.confirm('您还不是商家,确认成为商家?').then(action => {
                     _this.$router.push('/tobuess');
-                });
+                }).catch(action => {
+
+
+                    console.log('addproduct');
+                })
+            },
+            topersoninfo:function () {
+                this.$router.push('/personinfo');
+            },
+			isbuess:function () {
+                this.$router.push('/buessDetail');
             }
         }
     }

@@ -21,7 +21,7 @@
             <div class="log_regist">
                 <span class="usr_name">验证码</span>
                 <span class="usr_input"><input type="text" placeholder="请输入验证码" v-model="code"></span>
-                <span><img src="../../img/1.jpg" width="100" style="height: 1rem;position: absolute;right: 0;top: 0;" alt=""></span>
+                <span @click="changecode" style="height: 1rem;position: absolute;right: 0;top: 0;"><img :src="imgsrc" style="width: 1.5rem;height: 1rem;"/></span>
             </div>
             <div class="log_regist">
                 <span class="usr_name">所在学校</span>
@@ -43,6 +43,7 @@
     export default{
         data(){
             return {
+            	imgsrc:'http://10.0.0.12:3000/code',
                 username:'',
                 psw:'',
                 psw2:'',
@@ -60,6 +61,9 @@
                 ],
             }
         },
+        mounted:function(){
+        	
+        },
         methods:{
             onCollageChange(picker, values){
                 this.modelschool = values.toString();
@@ -67,6 +71,9 @@
             savecollage(){
                 this.school = this.modelschool;
                 this.collageVisible = false;
+            },
+            changecode(){
+            	this.imgsrc = ''+this.GLOBAL.host+'/code?id='+Math.random();
             },
             regist(){
             	var _this = this;
@@ -77,7 +84,7 @@
             	if(this.psw!="" && this.username!="" && this.psw2!="" && this.code!=""){
             		$.ajax({
 	            		type:"post",
-	            		url:"http://10.0.0.12:3000/registuser",
+	            		url:""+this.GLOBAL.host+"/registuser",
 	            		async:true,
 	            		data:{
 	            			username : this.username,
