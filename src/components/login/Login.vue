@@ -25,6 +25,7 @@
 </template>
 
 <script>
+	import { MessageBox } from 'mint-ui';
 	export default{
 		data(){
 			return {
@@ -37,9 +38,10 @@
                 this.$router.push('/regiest');
             },
             login:function(){
+            	var _this =this;
             	$.ajax({
             		type:"post",
-            		url:""+this.GLOBAL.host+"/registuser",
+            		url:""+this.GLOBAL.host+"/login",
             		async:true,
             		data:{
             			username : this.username,
@@ -49,6 +51,9 @@
             			if(data.code == -1){
             				MessageBox('提示', data.info);
             				return;
+            			}else{
+            				localStorage.setItem("userinfo",JSON.stringify(data.info));
+            				_this.$router.push('/index');
             			}
             			
             		}
