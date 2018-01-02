@@ -5,11 +5,16 @@ Vue.use(Vuex);
 
 var state = {
     notes:'main',
+    
+    adressdetail:{}
 }
 
 var mutations = {
     addNote(state, value){
         state.notes = value;
+    },
+    addAdressDetail(state, value){
+        state.adressdetail = value;
     },
 
 }

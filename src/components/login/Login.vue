@@ -1,7 +1,7 @@
 <template>
 	<div class="log_body">
 		<mt-header title="登录">
-		  <router-link to="/index" slot="left">
+		  <router-link to="/personal" slot="left">
 		    <mt-button icon="back"></mt-button>
 		  </router-link>
 		</mt-header>

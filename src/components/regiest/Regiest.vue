@@ -8,7 +8,7 @@
         <div>
             <div class="log_regist">
                 <span class="usr_name">用户名</span>
-                <span class="usr_input"><input type="text" placeholder="请输入用户名" v-model="username"></span>
+                <span class="usr_input"><input type="text" onkeyup="value=value.replace(/[\W]/g,'') " placeholder="请输入用户名" v-model="username"></span>
             </div>
             <div class="log_regist">
                 <span class="usr_name">密码</span>
@@ -61,9 +61,6 @@
                 ],
             }
         },
-        mounted:function(){
-        	
-        },
         methods:{
             onCollageChange(picker, values){
                 this.modelschool = values.toString();
@@ -79,6 +76,10 @@
             	var _this = this;
             	if(this.psw != this.psw2){
             		MessageBox('提示', "密码不一致，请重新输入");
+            		return;
+            	}
+            	if(this.username.length<6 || this.username.length>12){
+            		MessageBox('提示', "用户名长度需在6-12位之间");
             		return;
             	}
             	if(this.psw!="" && this.username!="" && this.psw2!="" && this.code!=""){

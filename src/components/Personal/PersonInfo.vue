@@ -6,7 +6,7 @@
            </router-link>
        </mt-header>
        <div>
-	       	<mt-field label="用户名" readonly placeholder="请输入用户名" v-model="name"></mt-field>
+	       	<mt-field label="用户名" readonly placeholder="请输入用户名" v-model="username"></mt-field>
 			<mt-field label="昵称" placeholder="请输入昵称" v-model="nickname"></mt-field>
 			<mt-field label="手机号" placeholder="请输入手机号" type="number" v-model="phone"></mt-field>
 			<div @click="sexVisible=true">
@@ -16,19 +16,19 @@
 				<span class="header_title">我的头像</span>
 				<span>
 					<a href="javascript:;" class="a-upload">
-						<img :src="uploadimg"/>
+						<img :src="headportrait"/>
 					    <input @change="uploadfile" type="file" name="" id="" accept="image/*"  />
 					</a>
 				</span>
 			</div>
 			<div @click="collageVisible=true"> 
-				<mt-field label="所在院校" readonly placeholder="请输入院校" v-model="collage"></mt-field>
+				<mt-field label="所在院校" readonly placeholder="请输入院校" v-model="school"></mt-field>
 			</div>
-			<mt-field label="简介" placeholder="请输入简介" type="textarea" rows="4" v-model="introduce"></mt-field>
+			<mt-field label="简介" placeholder="请输入简介" type="textarea" rows="4" v-model="introduction"></mt-field>
            
 
        </div>
-       <div class="perinfobtn">保存</div>
+       <div class="perinfobtn" @click="savedata">保存</div>
        <mt-popup position="bottom" v-model="sexVisible" popup-transition="popup-fade">
            <div class="popupheader clearfix"><span class="fl" @click="sexVisible=false">取消</span><span class="fr" @click="savesex">保存</span></div>
            <mt-picker :slots="sexslots" @change="onsexChange"></mt-picker>
@@ -48,20 +48,19 @@
             return {
                 sexVisible:false,
                 collageVisible:false,
-                name:'',
-                nickname:'',
-                userinfo:{},
+                username:'',
+               	nickname:'',
                 phone:'',
-                modelnickname:'',
-               	uploadimg: '../../../dist/upload.png',
                 sex:'男',
+                headportrait: '../../src/img/upload.png',
+                school:'',
+                introduction:'',
+                userinfo:{},
+                modelnickname:'',
                 pickersex:'',
-                collage:'',
                 pickercollage:'',
                 modelemailval:'',
                 emailval:'',
-                introduce:'',
-                headportrait:'',
                 modelintroduce:'',
                 sexslots: [
                     {
@@ -81,13 +80,13 @@
         	this.userinfo = JSON.parse(localStorage.getItem("userinfo")) || '';
         	console.log(this.userinfo);
         	if(this.userinfo){
-        		this.name = this.userinfo.username;
+        		this.username = this.userinfo.username;
         		this.sex = this.userinfo.sex || '男';
         		this.nickname = this.userinfo.nickname;
         		this.phone = this.userinfo.phone;
-        		this.collage = this.userinfo.school;
-        		this.introduction = this.userinfo.introduce;
-        		this.headportrait = this.userinfo.headportrait;
+        		this.school = this.userinfo.school;
+        		this.introduction = this.userinfo.introduction;
+        		this.headportrait = this.userinfo.headportrait || '../../src/img/upload.png';
         	}
         },
         methods: {
@@ -115,6 +114,7 @@
             },
             uploadfile(){
             	var _this = this;
+            	
             	var file = event.target.files[0];  
             	if (window.FileReader) {  
 		            var reader = new FileReader();  
@@ -133,7 +133,7 @@
 							// 告诉jQuery不要去设置Content-Type请求头
 							contentType : false,
 							success : function(data) { 
-								_this.uploadimg = data.url;
+								_this.headportrait = data.url;
 							}, 
 							error : function(responseStr) { 
 								console.log("error");
@@ -147,9 +147,47 @@
                 this.sexVisible = false;
             },
             savecollage:function () {
-                this.collage = this.pickercollage;
+                this.school = this.pickercollage;
                 this.collageVisible = false;
             },
+            savedata:function(){
+            	if(this.phone.length!=11){
+            		MessageBox("提示","手机号码不正确");
+            		return;
+            	}
+            	var _this = this;
+            	var datainfo = {
+            		username:this.username,
+	               	nickname:this.nickname,
+	                phone:this.phone,
+	                sex:this.sex,
+	                headportrait: this.headportrait,
+	                school:this.school,
+	                introduction:this.introduction,
+	                _id:_this.userinfo._id
+            	}
+            	datainfo = JSON.stringify(datainfo);
+            	$.ajax({ 
+					url:""+_this.GLOBAL.host+"/changeuserinfo",
+					type : 'POST', 
+					data : {
+						id:_this.userinfo._id,
+						userinfo:datainfo
+					},
+					success : function(data) { 
+						if(data.code == 0){
+							localStorage.setItem("userinfo",JSON.stringify(data.data));
+							_this.$router.push('./personal');
+						}else{
+							MessageBox("提示","保存失败，请稍后重试");
+						}
+						
+					}, 
+					error : function(responseStr) { 
+						MessageBox("提示","保存失败，请稍后重试");
+					} 
+				});
+            }
 
             
         }

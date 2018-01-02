@@ -4,13 +4,15 @@
 			<div class="my_back">
 				
 			</div>
-			<div class="my_touxiang" @click="topersoninfo">
+			<div class="my_touxiang" >
 				<img src="../../img/touxiang.jpg"/>
 				
 			</div>
-
-			<p class="my_name" v-show="1==2">知 足</p>
-			<p class="my_name" @click="$router.push('/login')">登录/注册</p>
+			<div class="my_name"  v-show="userinfo._id">
+				<p>{{userinfo.nickname}}</p>
+			</div>
+			
+			<p class="my_name" v-show="!userinfo._id" @click="$router.push('/login')">登录/注册</p>
 		</div>
 		
 		<ul class="my_state">
@@ -35,18 +37,23 @@
 			</mt-cell>
 		</div>
 		<div style="margin-top: 0.3rem">
-			
-			<div @click="tobuess">
+			<div @click="topersoninfo">
+				<mt-cell title="我的资料" :is-link="link">
+				  <img slot="icon" src="../../img/myzl.png" width="24" height="24">
+				</mt-cell>
+			</div>
+			<div @click="tobuess" v-show="userinfo.isbuess == 0">
 				<mt-cell title="成为商家" :is-link="link">
 				  <img slot="icon" src="../../img/shangjia.png" width="24" height="24">
 				</mt-cell>
 			</div>
-			<div @click="isbuess">
+			<div @click="isbuess" v-show="userinfo.isbuess == 1">
 				<mt-cell title="我是商家" :is-link="link">
 					<img slot="icon" src="../../img/shangjia.png" width="24" height="24">
 				</mt-cell>
 			</div>
-			<div>
+			
+			<div @click="toadress">
 				<mt-cell title="收货地址" :is-link="link">
 				  <img slot="icon" src="../../img/shouhuodizhi.png" width="24" height="24">
 				</mt-cell>
@@ -67,36 +74,53 @@
     export default {
         data() {
             return {
-                link:true
+                link:true,
+                userinfo:{}
             }
-        },
-
-        created:function(){
-
         },
         components:{
             bottomnav
         },
         mounted:function(){
-
+        	if(localStorage.getItem("userinfo")){
+        		this.userinfo = JSON.parse(localStorage.getItem("userinfo"));
+        		console.log(this.userinfo);
+        	}
         },
         methods: {
             tobuess:function () {
-                var _this = this;
-                MessageBox.confirm('您还不是商家,确认成为商家?').then(action => {
-                    _this.$router.push('/tobuess');
-                }).catch(action => {
-
-
-                    console.log('addproduct');
-                })
+            	if(this.userinfo._id){
+            		this.$router.push('/tobuess');
+            	}else{
+            		MessageBox("提示","请先登陆");
+            	}
             },
             topersoninfo:function () {
-                this.$router.push('/personinfo');
+            	var _this = this;
+            	this.islogin(function(){
+					_this.$router.push('/personinfo');
+				});
+            },
+            toadress:function(){
+            	var _this = this;
+				this.islogin(function(){
+					_this.$router.push('/personadress');
+				});
             },
 			isbuess:function () {
-                this.$router.push('/buessDetail');
-            }
+				var _this = this;
+				this.islogin(function(){
+					_this.$router.push('/buessDetail');
+				});
+			
+           },
+           islogin:function(callback){
+           		if(this.userinfo._id){
+            		callback();
+            	}else{
+            		MessageBox("提示","请先登陆");
+            	}
+           }
         }
     }
 </script>

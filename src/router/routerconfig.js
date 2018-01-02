@@ -8,6 +8,8 @@ const detail = resolve => require(['../components/detail/Details.vue'], resolve)
 const classification = resolve => require(['../components/classification/Classification.vue'], resolve)
 const personal = resolve => require(['../components/Personal/PersonalCenter.vue'], resolve)
 const personinfo = resolve => require(['../components/Personal/PersonInfo.vue'], resolve)
+const personadress = resolve => require(['../components/Personal/PersonAdress.vue'], resolve)
+const personNewAdress = resolve => require(['../components/Personal/PersonNewAdress.vue'], resolve)
 const shop = resolve => require(['../components/shop/Shopcart.vue'], resolve)
 
 const login = resolve => require(['../components/login/Login.vue'], resolve)
@@ -40,6 +42,16 @@ const routes = [
         path: '/personinfo',
         name:'personinfo',
         component: personinfo,
+    }
+    ,{
+        path: '/personadress',
+        name:'personadress',
+        component: personadress,
+    }
+    ,{
+        path: '/personNewAdress',
+        name:'personNewAdress',
+        component: personNewAdress,
     }
     ,{
         path: '/shop',
