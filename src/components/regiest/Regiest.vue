@@ -43,7 +43,7 @@
     export default{
         data(){
             return {
-            	imgsrc:'http://10.0.0.12:3000/code',
+            	imgsrc:''+this.GLOBAL.host+'/code?id='+Math.random(),
                 username:'',
                 psw:'',
                 psw2:'',

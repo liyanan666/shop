@@ -17,6 +17,7 @@ const regiest = resolve => require(['../components/regiest/Regiest.vue'], resolv
 const tobuess = resolve => require(['../components/buess/ToBuess.vue'], resolve)
 const buessDetail = resolve => require(['../components/buess/BuessDetails.vue'], resolve)
 const addproduct = resolve => require(['../components/buess/AddProduct.vue'], resolve)
+const product = resolve => require(['../components/buess/Product.vue'], resolve)
 Vue.use(VueRouter);
 //配置路由
 const routes = [
@@ -72,6 +73,11 @@ const routes = [
         path: '/addproduct',
         name:'addproduct',
         component: addproduct,
+    },
+    {
+        path: '/product',
+        name:'product',
+        component: product,
     },
     {
         path: '/login',

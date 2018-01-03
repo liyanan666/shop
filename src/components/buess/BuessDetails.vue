@@ -8,8 +8,8 @@
         <div class="buess_head clearfix">
             <div class="head_left"><img src="../../img/touxiang.jpg" alt=""></div>
             <div class="head_right">
-                <p class="username">我是用户名</p>
-                <p class="usercode">店铺号：666dasfa</p>
+                <p class="username">{{userinfo.nickname}}</p>
+                <p class="usercode">店铺名：666dasfa</p>
             </div>
         </div>
         <div class="buess_content">
@@ -26,17 +26,23 @@
             </div>
         </div>
         <ul class="buess_caozuo clearfix">
+        	<li>
+                <router-link to="product">
+                    <div class="icon lv"><img src="../../img/yifabu.png" alt=""></div>
+                    <p>已发布商品</p>
+                </router-link>
+           </li>
             <li>
                 <router-link to="addproduct">
                     <div class="icon blue"><img src="../../img/fabushangpin2.png" alt=""></div>
                     <p>发布商品</p>
                 </router-link>
             </li>
+            
             <li>
                 <div class="icon juhuang"><img src="../../img/dingdanguanli.png" alt=""></div>
                 <p>订单管理</p>
             </li>
-            <li></li>
             <li></li>
         </ul>
     </div>
@@ -44,7 +50,13 @@
 <script>
     export default {
         data() {
-            return {}
+            return {
+            	userinfo:{}
+            }
+        },
+        mounted:function(){
+        	this.userinfo = JSON.parse(localStorage.getItem("userinfo")) || {};
+        	console.log(this.userinfo);
         },
         methods: {
 
@@ -58,7 +70,6 @@
         background: -o-linear-gradient(right, #f45201, #e14100); /* Opera 11.1 - 12.0 */
         background: -moz-linear-gradient(right, #f45201, #e14100); /* Firefox 3.6 - 15 */
         background: linear-gradient(to right, #f45201 , #e14100); /* 标准的语法 */
-
         display: flex;
     }
     .head_left,head_right{
@@ -132,9 +143,11 @@
     .buess_caozuo .juhuang{
         background:#ff7161;
     }
+    .buess_caozuo .lv
+    {
+    	background: #56b6af;
+    }
     .buess_caozuo li img{
-
         width: .8rem;
-
     }
 </style>
