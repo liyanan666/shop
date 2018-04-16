@@ -85,6 +85,7 @@ a:active {star:expression(this.onFocus=this.blur());}
 	z-index: 30;
 	color: #fff;
 	font-size: 0.3rem;
+	max-width: 640px;
 }
 .index_header .header_input{
 	border: none;
