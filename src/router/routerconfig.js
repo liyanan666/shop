@@ -11,7 +11,7 @@ const personinfo = resolve => require(['../components/Personal/PersonInfo.vue'],
 const personadress = resolve => require(['../components/Personal/PersonAdress.vue'], resolve)
 const personNewAdress = resolve => require(['../components/Personal/PersonNewAdress.vue'], resolve)
 const shop = resolve => require(['../components/shop/Shopcart.vue'], resolve)
-
+const orderdetail = resolve => require(['../components/detail/OrderDetail.vue'], resolve)
 const login = resolve => require(['../components/login/Login.vue'], resolve)
 const regiest = resolve => require(['../components/regiest/Regiest.vue'], resolve)
 const tobuess = resolve => require(['../components/buess/ToBuess.vue'], resolve)
@@ -93,6 +93,11 @@ const routes = [
         path: '/detail',
         name:'detail',
         component: detail,
+    },
+    {
+        path: '/orderdetail',
+        name:'orderdetail',
+        component: orderdetail,
     },
     {
         path: '*',

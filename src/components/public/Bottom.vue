@@ -5,13 +5,14 @@
                 <img slot="icon" src="../../img/shouye.png" >
                 首页
             </mt-tab-item>
-            <mt-tab-item id="class">
-                <img slot="icon" src="../../img/fenlei.png">
-                消息
-            </mt-tab-item>
+
             <mt-tab-item id="shop">
                 <img slot="icon" src="../../img/gouwuche.png">
                 购物车
+            </mt-tab-item>
+            <mt-tab-item id="class">
+                <img slot="icon" src="../../img/fenlei.png">
+                订单
             </mt-tab-item>
             <mt-tab-item id="person">
                 <img slot="icon" src="../../img/zhongxin.png">
