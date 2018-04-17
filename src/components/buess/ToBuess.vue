@@ -111,6 +111,7 @@
         },
         methods:{
         	regiest(){
+        	    var _this = this;
         		var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;  
         		if(reg.test(this.data.buessidNumber) === false)  
 			   	{  

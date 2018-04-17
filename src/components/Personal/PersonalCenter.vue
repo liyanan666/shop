@@ -30,12 +30,6 @@
 			</li>
 			<li></li>
 		</ul>
-		<div>
-			<mt-cell title="我的订单" :is-link="link">
-			  <span>全部订单</span>
-			  <img slot="icon" src="../../img/wodedingdan.png" width="24" height="24">
-			</mt-cell>
-		</div>
 		<div style="margin-top: 0.3rem">
 			<div @click="topersoninfo">
 				<mt-cell title="我的资料" :is-link="link">

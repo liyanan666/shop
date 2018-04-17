@@ -108,7 +108,7 @@
 				var id = this.userinfo._id;
 				$.ajax({
 					type:"post",
-					url:""+_this.GLOBAL.host+"/uploadimg",
+					url:""+this.GLOBAL.host+"/uploadimg",
 					async:true,
 					data:{
 						id:id,
