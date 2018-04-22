@@ -8,7 +8,7 @@
         <div>
             <div class="log_regist">
                 <span class="usr_name">用户名</span>
-                <span class="usr_input"><input type="text" placeholder="请输入用户名" v-model="psw"></span>
+                <span class="usr_input"><input type="text" placeholder="请输入用户名" v-model="username"></span>
             </div>
             <div class="log_regist">
                 <span class="usr_name">密码</span>

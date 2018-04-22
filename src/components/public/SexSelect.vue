@@ -1,7 +1,10 @@
 <template>
 	<div>
 		<mt-popup position="bottom" :value="sexshow" popup-transition="popup-fade">
-            <div class="popupheader clearfix"><span class="fl" @click="channel">取消</span><span class="fr" @click="savesex">保存</span></div>
+            <div class="popupheader clearfix">
+                <span class="fl" @click="channel">取消</span>
+                <span class="fr" @click="savesex">保存</span>
+            </div>
             <mt-picker :slots="sexslots" @change="onSexChange"></mt-picker>
         </mt-popup>
 	</div>

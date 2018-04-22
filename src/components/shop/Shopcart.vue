@@ -1,8 +1,7 @@
 <template>
 	<div>
-		<div class="index_header">
-			<span>购物车</span>
-		</div>
+		<mt-header title="购物车" style="position: fixed;width: 100%;top: 0;">
+		</mt-header>
        <div class="list-block">
 	       	<ul class="shop_list">
 				<li>

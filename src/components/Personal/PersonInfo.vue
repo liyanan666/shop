@@ -6,12 +6,14 @@
            </router-link>
        </mt-header>
        <div>
-	       	<mt-field label="用户名" readonly placeholder="请输入用户名" v-model="username"></mt-field>
-			<mt-field label="昵称" placeholder="请输入昵称" v-model="nickname"></mt-field>
-			<mt-field label="手机号" placeholder="请输入手机号" type="number" v-model="phone"></mt-field>
+	       	<mt-field label="用户名:" readonly placeholder="请输入用户名" v-model="username"></mt-field>
+			<mt-field label="昵称:" placeholder="请输入昵称" v-model="nickname"></mt-field>
+			<mt-field label="手机号:" placeholder="请输入手机号" type="number" v-model="phone"></mt-field>
 			<div @click="sexVisible=true">
-				<mt-field readonly label="性别" placeholder="请输入性别" type="url" v-model="sex"></mt-field>
+				<mt-field readonly label="性别:" placeholder="请输入性别" type="url" v-model="sex"></mt-field>
 			</div>
+			
+			
 			<div class="myheader">
 				<span class="header_title">我的头像</span>
 				<span>
@@ -22,9 +24,9 @@
 				</span>
 			</div>
 			<div @click="collageVisible=true"> 
-				<mt-field label="所在院校" readonly placeholder="请输入院校" v-model="school"></mt-field>
+				<mt-field label="所在院校:" readonly placeholder="请输入院校" v-model="school"></mt-field>
 			</div>
-			<mt-field label="简介" placeholder="请输入简介" type="textarea" rows="4" v-model="introduction"></mt-field>
+			<mt-field label="简介:" placeholder="请输入简介" type="textarea" rows="4" v-model="introduction"></mt-field>
            
 
        </div>
@@ -195,15 +197,18 @@
 </script>
 
 <style>
+	.mint-cell{
+		border-bottom: 1px solid #efefef;
+	}
     .perinfobtn{
-        width: 80%;
-        height:1rem;
+        width: 90%;
+        height:.8rem;
         background: #D90A00;
         margin: 1rem auto;
         border-radius: 8px;
         color: #fff;
         text-align: center;
-        line-height: 1rem;
+        line-height: .8rem;
         font-size: 18px;
     }
     .popupheader{
@@ -217,7 +222,8 @@
         line-height: .8rem;
     }
     .mint-cell:last-child{
-        background-position: inherit;
+		background-position: inherit;
+		border-bottom: 1px solid #efefef;
     }
     .mint-popup-bottom{
         width: 100%;
@@ -228,8 +234,8 @@
     	align-items: center;
     	padding: 0 10px;
     	background: #fff;
-    	border-top: 1px solid #d9d9d9;
-    	font-size: 16px;
+		font-size: 16px;
+		border-bottom: 1px solid #efefef;
     }
     .myheader .header_title{
     	width: 105px;

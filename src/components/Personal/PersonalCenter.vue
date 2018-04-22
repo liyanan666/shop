@@ -30,7 +30,7 @@
 			</li>
 			<li></li>
 		</ul>
-		<div style="margin-top: 0.3rem">
+		<div style="margin-top: 0.3rem;margin-bottom:1rem">
 			<div @click="topersoninfo">
 				<mt-cell title="我的资料" :is-link="link">
 				  <img slot="icon" src="../../img/myzl.png" width="24" height="24">
@@ -52,8 +52,13 @@
 				  <img slot="icon" src="../../img/shouhuodizhi.png" width="24" height="24">
 				</mt-cell>
 			</div>
-			<div>
-				<mt-cell title="服务中心" :is-link="link">
+			<div @click="work">
+				<mt-cell title="我要兼职" :is-link="link">
+				  <img slot="icon" src="../../img/work.png" width="24" height="24">
+				</mt-cell>
+			</div>
+			<div @click="history">
+				<mt-cell title="申请记录" :is-link="link">
 				  <img slot="icon" src="../../img/fuwuzhongxin.png" width="24" height="24">
 				</mt-cell>
 			</div>
@@ -79,7 +84,12 @@
         	if(localStorage.getItem("userinfo")){
         		this.userinfo = JSON.parse(localStorage.getItem("userinfo"));
         		console.log(this.userinfo);
-        	}
+				if(!this.userinfo.nickname){
+					this.userinfo.nickname = this.userinfo.username;
+				}
+        	}else{
+				MessageBox("提示","请先登陆");
+			}
         },
         methods: {
             tobuess:function () {
@@ -108,13 +118,25 @@
 				});
 			
            },
+		  work:function(){
+			var _this = this;
+				this.islogin(function(){
+					_this.$router.push('/work');
+				});
+		  },
            islogin:function(callback){
            		if(this.userinfo._id){
             		callback();
             	}else{
             		MessageBox("提示","请先登陆");
             	}
-           }
+		   },
+		   history:function(){
+			   var _this = this;
+			   this.islogin(function(){
+					_this.$router.push('/applyhistory');
+				});
+		   }
         }
     }
 </script>

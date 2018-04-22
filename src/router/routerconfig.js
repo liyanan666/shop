@@ -18,6 +18,9 @@ const tobuess = resolve => require(['../components/buess/ToBuess.vue'], resolve)
 const buessDetail = resolve => require(['../components/buess/BuessDetails.vue'], resolve)
 const addproduct = resolve => require(['../components/buess/AddProduct.vue'], resolve)
 const product = resolve => require(['../components/buess/Product.vue'], resolve)
+const work = resolve => require(['../components/Personal/Work.vue'], resolve)
+const applyhistory = resolve => require(['../components/Personal/ApplyHistory.vue'], resolve)  //
+const applydistributor = resolve => require(['../components/Personal/ApplyDistributor.vue'], resolve) 
 Vue.use(VueRouter);
 //配置路由
 const routes = [
@@ -98,6 +101,21 @@ const routes = [
         path: '/orderdetail',
         name:'orderdetail',
         component: orderdetail,
+    },
+    {
+        path: '/work',
+        name:'work',
+        component: work, 
+    },
+    {
+        path: '/applydistributor',
+        name:'applydistributor',
+        component: applydistributor, //applydistributor
+    },
+    {
+        path: '/applyhistory',
+        name:'applyhistory',
+        component: applyhistory,
     },
     {
         path: '*',

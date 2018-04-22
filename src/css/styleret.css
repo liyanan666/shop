@@ -71,7 +71,7 @@ a:active {star:expression(this.onFocus=this.blur());}
 }
 .mint-header-title{
 	height: 100%;
-    line-height: 0.88rem;
+    line-height: 40px;
 }
 .index_header{
 	height: 0.8rem;
@@ -95,7 +95,11 @@ a:active {star:expression(this.onFocus=this.blur());}
 	color: #fff;
 }
 .mint-header{
-	background-color: #d90a00 !important;
+	background: #ffffff !important;
+	color: #cb2527 !important;
+	border-bottom: 1px solid #ddd;
+	height: 45px;
+    line-height: 45px;
 }
 
 .mint-popup-bottom{

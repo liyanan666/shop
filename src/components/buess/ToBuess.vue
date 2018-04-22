@@ -138,10 +138,10 @@
         				if(data.code == 0){
         					localStorage.setItem("userinfo",JSON.stringify(data.data));
         					localStorage.setItem("buessinfo",userdata);
-        					MessageBox("提示","保存成功");
+        					MessageBox("提示",data.info);
         					_this.$router.push('/personal');
         				}else{
-        					MessageBox("提示","网络错误，请稍候重试");
+        					MessageBox("提示",data.info);
         					
         				}
         			}
