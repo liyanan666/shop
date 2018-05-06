@@ -7,8 +7,10 @@
     .shop_list li{
     	border-bottom: 1px solid #eee;
     }
-    .shop_list .list_shopcar{
-    }
+	.shop_list .item-content{
+		display: flex;
+		align-items: center;
+	}
     .shop_list .shop_pic{
     	flex: 1;
     	height: 2rem;
@@ -28,7 +30,31 @@
 		font-size:.28rem !important;
     	line-height: 0.5rem;
     }
-    .shop_content .car_info{
+	.shop_content .businessbtn{
+		width: 0.5rem;
+		height: 0.5rem;
+		text-align: center;
+		line-height: .5rem;
+		border-radius: 50%;
+		display: inline-block;
+
+	}
+	.btngroup span{
+		font-size: .32rem;
+	}
+	.shop_content .addbusiness{
+		background: red;
+		color: #fff !important;
+	}
+	.shop_content .businessnum{
+		margin: 0 .2rem;
+	}
+	.shop_content .delbusiness{
+		background: #fff;
+		border: 1px solid #dadada;
+		color: #666666;
+	}
+   .shop_content .car_info{
     	font-size: 0.22rem;
     	color: #777777;
     }
@@ -90,32 +116,69 @@
 	.shop_Settlement{
 		height:1.2rem;
 		line-height: 1.2rem;
-		text-align: center;
 		font-size: 0.38rem;
-		margin-bottom: 1.2rem;
-		/*border: 1px solid red;*/
-		border-bottom: 1px solid #ccc;
+		position: fixed;
+		bottom: 55px;
+		width: 100%;
+		border-top: 1px solid #d9d9d9;
+		max-width: 640px;
+		background: #fff;
 	}
-  .shop_Settlement .shop_One{
-  	color:#000;
-  
-  	float: left;
-  	margin-left: 0.5rem;
-  }
-.shop_Settlement .shop_One>span{
-	color: red;
-	
-}
+	.shop_Settlement label{
+		font-size: .3rem;
+		line-height: 1rem;
+		vertical-align: top;
+	}
+	.shop_Settlement .busmoney{
+		padding: .2rem;
+		font-size: .25rem;
+		line-height: normal;
+		text-align: right;
+		font-weight: bold;
+	}
+	.busmoney .busmoneys{
+		color: #d90a00;
+	}
+
 .shop_Settlement .shop_Two{
-	height:.8rem;
-	line-height: .8rem;
+	height:.6rem;
+	line-height: .6rem;
 	border-radius: 5px;
 	color: #fff;
 	background-color:red;
 	float:right;
-	margin-right: 0.5rem;
+	margin-right: 0.3rem;
+	margin-top: .1rem;
 	padding:0rem 0.3rem;
 	position: relative;
 	top: 7%;
 	font-size:.3rem;
+
 }
+
+/*checkbox*/
+.demo--label{display:inline-block;margin-left: 10px;}
+.demo--radio{display:none}
+.demo--radioInput{
+
+	border:1px solid rgba(0,0,0,0.15);
+
+	display:inline-block;
+	height:16px;
+	margin-right:10px;
+	margin-top:-1px;
+	vertical-align:middle;
+	width:16px;
+	line-height:1
+}
+.demo--radio:checked + .demo--radioInput:after{
+	background: url("../../img/duihao.png") no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
+	border-radius:100%;content:"";
+	display:inline-block;
+	height:12px;
+	margin:2px;
+	width:12px;
+}
+.demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}

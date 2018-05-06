@@ -1,107 +1,49 @@
 <template>
 	<div>
-		<div class="index_header">
-			<span>购物车</span>
-		</div>
+		<mt-header title="购物车" style="position: fixed;width: 100%;top: 0;">
+		</mt-header>
        <div class="list-block">
 	       	<ul class="shop_list">
-	            <li>
-	                <label class="label-checkbox item-content">
-	                    <input type="checkbox" name="my-checkbox" value="Books" checked="checked">
-	                    <div class="item-media">
-	                        <i class="icon icon-form-checkbox"></i>
-	                    </div>
-	                    <div class="item-inner list_shopcar">
-	                        <div class="shop_pic">
-	                        	<img src="../../../dist/local_pic.png"/>
-	                        </div>
-	                        <div class="shop_content">
-	                        	<p class="car_title">呼吸套装礼盒呼吸套</p>
-	                        	<p class="car_info">400g*10礼盒</p>
-								<p class="car_money">
-									<span>¥186</span>
-									<span>¥356<span class="midline"></span></span>
-									<span style="float: right;font-size: .25rem">X1</span>
-								</p>
-	                        </div>
-	                    </div>
-	                </label>
-	            </li>
-	            <li>
-	                <label class="label-checkbox item-content">
-	                    <!-- Checked by default -->
-	                    <input type="checkbox" name="my-checkbox" value="Books" checked="checked">
-	                    <div class="item-media">
-	                        <i class="icon icon-form-checkbox"></i>
-	                    </div>
-	                    <div class="item-inner list_shopcar">
-	                        <div class="shop_pic">
-	                        	<img src="../../../dist/local_pic.png"/>
-	                        </div>
-	                        <div class="shop_content">
-	                        	<p class="car_title">呼吸套装礼盒呼吸套装礼盒</p>
-	                        	<p class="car_info">400g*10礼盒</p>
-								<p class="car_money">
-									<span>¥186</span>
-									<span>¥356<span class="midline"></span></span>
-									<span style="float: right;font-size: .25rem">X1</span>
-								</p>
-	                        </div>
-	                    </div>
-	                </label>
-	            </li>
-	            <li>
-	                <label class="label-checkbox item-content">
-	                    <!-- Checked by default -->
-	                    <input type="checkbox" name="my-checkbox" value="Books" checked="checked">
-	                    <div class="item-media">
-	                        <i class="icon icon-form-checkbox"></i>
-	                    </div>
-	                    <div class="item-inner list_shopcar">
-	                        <div class="shop_pic">
-	                        	<img src="../../../dist/local_pic.png"/>
-	                        </div>
-	                        <div class="shop_content">
-	                        	<p class="car_title">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
-	                        	<p class="car_info">400g*10礼盒</p>
-								<p class="car_money">
-									<span>¥186</span>
-									<span>¥356<span class="midline"></span></span>
-									<span style="float: right;font-size: .25rem">X1</span>
-								</p>
-	                        </div>
-	                    </div>
-	                </label>
-	            </li>
-	             <li>
-	                <label class="label-checkbox item-content">
-	                    <!-- Checked by default -->
-	                    <input type="checkbox" name="my-checkbox" value="Books" checked="checked">
-	                    <div class="item-media">
-	                        <i class="icon icon-form-checkbox"></i>
-	                    </div>
-	                    <div class="item-inner list_shopcar">
-	                        <div class="shop_pic">
-	                        	<img src="../../../dist/local_pic.png"/>
-	                        </div>
-	                        <div class="shop_content">
-	                        	<p class="car_title">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
-	                        	<p class="car_info">400g*10礼盒</p>
-	                        	<p class="car_money">
-									<span>¥186</span>
-									<span>¥356<span class="midline"></span></span>
-									<span style="float: right;font-size: .25rem">X1</span>
-								</p>
-	                        	
-	                        </div>
-	                    </div>
-	                </label>
-	            </li>
+				<li>
+					<div class="item-content">
+						<!-- Checked by default -->
+						<label class="demo--label"><input class="demo--radio" type="checkbox" name="demo-checkbox1">
+							<span class="demo--checkbox demo--radioInput"></span>
+						</label>
+
+						<div class="shop_pic">
+							<img src="../../img/s5.png"/>
+						</div>
+						<div class="shop_content">
+							<p class="car_title">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>
+							<p class="car_info">400g*10礼盒</p>
+							<p class="car_money">
+								<span>¥186</span>
+								<span>¥356<span class="midline"></span></span>
+								<span style="float: right;font-size: .25rem" class="btngroup">
+									<span class="fl businessbtn addbusiness">+</span>
+									<span class="fl businessnum">0</span>
+									<span class="fl businessbtn delbusiness">-</span>
+								</span>
+							</p>
+						</div>
+
+					</div>
+				</li>
+
+
 	        </ul>
        </div>
        <div class="shop_Settlement">
-       	<span class="shop_One">合计&nbsp&nbsp&nbsp<span>¥256</span></span>
-       	<span class="shop_Two">去结算</span>
+
+			<label class="demo--label"><input class="demo--radio" type="checkbox" name="demo-checkbox1">
+				<span class="demo--checkbox demo--radioInput"></span>全选
+			</label>
+		   <span class="shop_Two fr">去结算</span>
+			<div class="fr busmoney">
+				<p>合计：<span class="busmoneys">¥1234</span>元</p>
+				<p>免费配送</p>
+			</div>
        </div>
         <bottomnav :attribute="'shop'"></bottomnav>
 	</div>
@@ -112,7 +54,8 @@
     export default {
         data() {
             return {
-                shopnum:0
+                shopnum:0,
+
             }
         },
 

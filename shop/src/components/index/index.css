@@ -3,7 +3,6 @@
 /*导航栏*/
 .index_nav{
 	display: flex;
-	background: #f6f6f6;
 	padding: 0.2rem;
 	justify-content: space-around;
 	border-bottom: 1px solid #D90A00;

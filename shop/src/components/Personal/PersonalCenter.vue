@@ -4,13 +4,15 @@
 			<div class="my_back">
 				
 			</div>
-			<div class="my_touxiang" @click="topersoninfo">
+			<div class="my_touxiang" >
 				<img src="../../img/touxiang.jpg"/>
 				
 			</div>
-
-			<p class="my_name" v-show="1==2">知 足</p>
-			<p class="my_name" @click="$router.push('/login')">登录/注册</p>
+			<div class="my_name"  v-show="userinfo._id">
+				<p>{{userinfo.nickname}}</p>
+			</div>
+			
+			<p class="my_name" v-show="!userinfo._id" @click="$router.push('/login')">登录/注册</p>
 		</div>
 		
 		<ul class="my_state">
@@ -28,31 +30,35 @@
 			</li>
 			<li></li>
 		</ul>
-		<div>
-			<mt-cell title="我的订单" :is-link="link">
-			  <span>全部订单</span>
-			  <img slot="icon" src="../../img/wodedingdan.png" width="24" height="24">
-			</mt-cell>
-		</div>
-		<div style="margin-top: 0.3rem">
-			
+		<div style="margin-top: 0.3rem;margin-bottom:1rem">
+			<div @click="topersoninfo">
+				<mt-cell title="我的资料" :is-link="link">
+				  <img slot="icon" src="../../img/myzl.png" width="24" height="24">
+				</mt-cell>
+			</div>
 			<div @click="tobuess">
 				<mt-cell title="成为商家" :is-link="link">
 				  <img slot="icon" src="../../img/shangjia.png" width="24" height="24">
 				</mt-cell>
 			</div>
-			<div @click="isbuess">
+			<div @click="isbuess" v-show="userinfo.isbuess == 1">
 				<mt-cell title="我是商家" :is-link="link">
 					<img slot="icon" src="../../img/shangjia.png" width="24" height="24">
 				</mt-cell>
 			</div>
-			<div>
+			
+			<div @click="toadress">
 				<mt-cell title="收货地址" :is-link="link">
 				  <img slot="icon" src="../../img/shouhuodizhi.png" width="24" height="24">
 				</mt-cell>
 			</div>
-			<div>
-				<mt-cell title="服务中心" :is-link="link">
+			<div @click="work">
+				<mt-cell title="我要兼职" :is-link="link">
+				  <img slot="icon" src="../../img/work.png" width="24" height="24">
+				</mt-cell>
+			</div>
+			<div @click="history">
+				<mt-cell title="申请记录" :is-link="link">
 				  <img slot="icon" src="../../img/fuwuzhongxin.png" width="24" height="24">
 				</mt-cell>
 			</div>
@@ -67,36 +73,71 @@
     export default {
         data() {
             return {
-                link:true
+                link:true,
+                userinfo:{}
             }
-        },
-
-        created:function(){
-
         },
         components:{
             bottomnav
         },
         mounted:function(){
-
+//      	if(localStorage.getItem("userinfo")){
+//      		this.userinfo = JSON.parse(localStorage.getItem("userinfo"));
+//      		console.log(this.userinfo);
+//				if(!this.userinfo.nickname){
+//					this.userinfo.nickname = this.userinfo.username;
+//				}
+//      	}else{
+//				MessageBox("提示","请先登陆");
+//			}
         },
         methods: {
             tobuess:function () {
-                var _this = this;
-                MessageBox.confirm('您还不是商家,确认成为商家?').then(action => {
-                    _this.$router.push('/tobuess');
-                }).catch(action => {
-
-
-                    console.log('addproduct');
-                })
+            	this.$router.push('/tobuess');
+//          	if(this.userinfo._id){
+//          		
+//          	}else{
+//          		MessageBox("提示","请先登陆");
+//          	}
             },
             topersoninfo:function () {
-                this.$router.push('/personinfo');
+            	var _this = this;
+            	this.islogin(function(){
+					_this.$router.push('/personinfo');
+				});
+            },
+            toadress:function(){
+            	var _this = this;
+				this.islogin(function(){
+					_this.$router.push('/personadress');
+				});
             },
 			isbuess:function () {
-                this.$router.push('/buessDetail');
-            }
+				var _this = this;
+				this.islogin(function(){
+					_this.$router.push('/buessDetail');
+				});
+			
+           },
+		  work:function(){
+			var _this = this;
+				this.islogin(function(){
+					_this.$router.push('/work');
+				});
+		  },
+           islogin:function(callback){
+           		if(2>1){
+            		callback();
+            	}else{
+            		MessageBox("提示","请先登陆");
+            	}
+		   },
+		   history:function(){
+			   var _this = this;
+			   this.islogin(function(){
+					_this.$router.push('/applyhistory');
+				});
+		   }
         }
     }
 </script>

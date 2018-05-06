@@ -36,7 +36,7 @@
 				  <img slot="icon" src="../../img/myzl.png" width="24" height="24">
 				</mt-cell>
 			</div>
-			<div @click="tobuess" v-show="userinfo.isbuess == 0">
+			<div @click="tobuess">
 				<mt-cell title="成为商家" :is-link="link">
 				  <img slot="icon" src="../../img/shangjia.png" width="24" height="24">
 				</mt-cell>
@@ -81,23 +81,24 @@
             bottomnav
         },
         mounted:function(){
-        	if(localStorage.getItem("userinfo")){
-        		this.userinfo = JSON.parse(localStorage.getItem("userinfo"));
-        		console.log(this.userinfo);
-				if(!this.userinfo.nickname){
-					this.userinfo.nickname = this.userinfo.username;
-				}
-        	}else{
-				MessageBox("提示","请先登陆");
-			}
+//      	if(localStorage.getItem("userinfo")){
+//      		this.userinfo = JSON.parse(localStorage.getItem("userinfo"));
+//      		console.log(this.userinfo);
+//				if(!this.userinfo.nickname){
+//					this.userinfo.nickname = this.userinfo.username;
+//				}
+//      	}else{
+//				MessageBox("提示","请先登陆");
+//			}
         },
         methods: {
             tobuess:function () {
-            	if(this.userinfo._id){
-            		this.$router.push('/tobuess');
-            	}else{
-            		MessageBox("提示","请先登陆");
-            	}
+            	this.$router.push('/tobuess');
+//          	if(this.userinfo._id){
+//          		
+//          	}else{
+//          		MessageBox("提示","请先登陆");
+//          	}
             },
             topersoninfo:function () {
             	var _this = this;
@@ -125,7 +126,7 @@
 				});
 		  },
            islogin:function(callback){
-           		if(this.userinfo._id){
+           		if(2>1){
             		callback();
             	}else{
             		MessageBox("提示","请先登陆");

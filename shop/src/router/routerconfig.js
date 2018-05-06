@@ -8,13 +8,19 @@ const detail = resolve => require(['../components/detail/Details.vue'], resolve)
 const classification = resolve => require(['../components/classification/Classification.vue'], resolve)
 const personal = resolve => require(['../components/Personal/PersonalCenter.vue'], resolve)
 const personinfo = resolve => require(['../components/Personal/PersonInfo.vue'], resolve)
+const personadress = resolve => require(['../components/Personal/PersonAdress.vue'], resolve)
+const personNewAdress = resolve => require(['../components/Personal/PersonNewAdress.vue'], resolve)
 const shop = resolve => require(['../components/shop/Shopcart.vue'], resolve)
-
+const orderdetail = resolve => require(['../components/detail/OrderDetail.vue'], resolve)
 const login = resolve => require(['../components/login/Login.vue'], resolve)
 const regiest = resolve => require(['../components/regiest/Regiest.vue'], resolve)
 const tobuess = resolve => require(['../components/buess/ToBuess.vue'], resolve)
 const buessDetail = resolve => require(['../components/buess/BuessDetails.vue'], resolve)
 const addproduct = resolve => require(['../components/buess/AddProduct.vue'], resolve)
+const product = resolve => require(['../components/buess/Product.vue'], resolve)
+const work = resolve => require(['../components/Personal/Work.vue'], resolve)
+const applyhistory = resolve => require(['../components/Personal/ApplyHistory.vue'], resolve)  //
+const applydistributor = resolve => require(['../components/Personal/ApplyDistributor.vue'], resolve) 
 Vue.use(VueRouter);
 //配置路由
 const routes = [
@@ -42,6 +48,16 @@ const routes = [
         component: personinfo,
     }
     ,{
+        path: '/personadress',
+        name:'personadress',
+        component: personadress,
+    }
+    ,{
+        path: '/personNewAdress',
+        name:'personNewAdress',
+        component: personNewAdress,
+    }
+    ,{
         path: '/shop',
         name:'shop',
         component: shop,
@@ -62,6 +78,11 @@ const routes = [
         component: addproduct,
     },
     {
+        path: '/product',
+        name:'product',
+        component: product,
+    },
+    {
         path: '/login',
         name:'login',
         component: login,
@@ -75,6 +96,26 @@ const routes = [
         path: '/detail',
         name:'detail',
         component: detail,
+    },
+    {
+        path: '/orderdetail',
+        name:'orderdetail',
+        component: orderdetail,
+    },
+    {
+        path: '/work',
+        name:'work',
+        component: work, 
+    },
+    {
+        path: '/applydistributor',
+        name:'applydistributor',
+        component: applydistributor, //applydistributor
+    },
+    {
+        path: '/applyhistory',
+        name:'applyhistory',
+        component: applyhistory,
     },
     {
         path: '*',
