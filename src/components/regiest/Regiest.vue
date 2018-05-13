@@ -43,7 +43,7 @@
     export default{
         data(){
             return {
-            	imgsrc:''+this.GLOBAL.host+'/code?id='+Math.random(),
+            	imgsrc:''+this.GLOBAL.host+'/user/code?id='+Math.random(),
                 username:'',
                 psw:'',
                 psw2:'',
@@ -70,7 +70,7 @@
                 this.collageVisible = false;
             },
             changecode(){
-            	this.imgsrc = ''+this.GLOBAL.host+'/code?id='+Math.random();
+            	this.imgsrc = ''+this.GLOBAL.host+'/user/code?id='+Math.random();
             },
             regist(){
             	var _this = this;
@@ -90,7 +90,7 @@
             	if(this.psw!="" && this.username!="" && this.psw2!="" && this.code!=""){
             		$.ajax({
 	            		type:"post",
-	            		url:""+this.GLOBAL.host+"/registuser",
+	            		url:""+this.GLOBAL.host+"/user/registuser",
 	            		async:true,
 	            		data:{
 	            			username : this.username,

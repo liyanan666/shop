@@ -41,7 +41,7 @@
             	var _this =this;
             	$.ajax({
             		type:"post",
-            		url:""+this.GLOBAL.host+"/login",
+            		url:""+this.GLOBAL.host+"/user/login",
             		async:true,
             		data:{
             			username : this.username,

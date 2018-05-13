@@ -81,15 +81,15 @@
             bottomnav
         },
         mounted:function(){
-//      	if(localStorage.getItem("userinfo")){
-//      		this.userinfo = JSON.parse(localStorage.getItem("userinfo"));
-//      		console.log(this.userinfo);
-//				if(!this.userinfo.nickname){
-//					this.userinfo.nickname = this.userinfo.username;
-//				}
-//      	}else{
-//				MessageBox("提示","请先登陆");
-//			}
+        	if(localStorage.getItem("userinfo")){
+        		this.userinfo = JSON.parse(localStorage.getItem("userinfo"));
+        		console.log(this.userinfo);
+				if(!this.userinfo.nickname){
+					this.userinfo.nickname = this.userinfo.username;
+				}
+        	}else{
+				MessageBox("提示","请先登陆");
+			}
         },
         methods: {
             tobuess:function () {
