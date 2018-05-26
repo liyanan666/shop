@@ -92,6 +92,8 @@
 	            		type:"post",
 	            		url:""+this.GLOBAL.host+"/user/registuser",
 	            		async:true,
+	            		xhrFields: {withCredentials: true},
+	            		crossDomain: true,
 	            		data:{
 	            			username : this.username,
 		            		password : this.psw,
