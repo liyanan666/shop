@@ -12,7 +12,7 @@
 						</label>
 
 						<div class="shop_pic">
-							<img src="../../img/s5.png"/>
+							<img src="http://qiniu.bestpiaopiao.cn/s5.png"/>
 						</div>
 						<div class="shop_content">
 							<p class="car_title">呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒呼吸套装礼盒</p>

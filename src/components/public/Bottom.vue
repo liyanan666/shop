@@ -2,20 +2,20 @@
     <div>
         <mt-tabbar v-model="attr" :fixed="isfix">
             <mt-tab-item id="main">
-                <img slot="icon" src="../../img/shouye.png" >
+                <img slot="icon" src="http://qiniu.bestpiaopiao.cn/shouye.png" >
                 首页
             </mt-tab-item>
 
             <mt-tab-item id="shop">
-                <img slot="icon" src="../../img/gouwuche.png">
+                <img slot="icon" src="http://qiniu.bestpiaopiao.cn/gouwuche.png">
                 购物车
             </mt-tab-item>
             <mt-tab-item id="class">
-                <img slot="icon" src="../../img/fenlei.png">
+                <img slot="icon" src="http://qiniu.bestpiaopiao.cn/fenlei.png">
                 订单
             </mt-tab-item>
             <mt-tab-item id="person">
-                <img slot="icon" src="../../img/zhongxin.png">
+                <img slot="icon" src="http://qiniu.bestpiaopiao.cn/zhongxin.png">
                 个人中心
             </mt-tab-item>
         </mt-tabbar>

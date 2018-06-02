@@ -8,11 +8,11 @@
 			
         </mt-header>
 		<ul class="job">
-	   	 <router-link to="applydistributor"><li><img src="../../img/wl.png" width="45"><span>物流员</span><i class="mint-cell-allow-right"></i></li></router-link>
-	   	 <li><a href="applicationjob.html"><img src="../../img/ph.png" width="45"><span>配货员</span><i class="mint-cell-allow-right"></i></a></li>
-	   	 <li><a href="applicationjob.html"><img src="../../img/lz.png" width="45"><span>招募楼长</span><i class="mint-cell-allow-right"></i></a></li>
-	   	 <li><a href="applicationjob.html"><img src="../../img/brand.png" width="45"><span>我要加盟</span><i class="mint-cell-allow-right"></i></a></li>
-	   	 <li><a href="applicationjob.html"><img src="../../img/qd.png" width="45"><span>敬请期待</span><i class="mint-cell-allow-right"></i></a></li>
+	   	 <router-link to="applydistributor"><li><img src="http://qiniu.bestpiaopiao.cn/wl.png" width="45"><span>物流员</span><i class="mint-cell-allow-right"></i></li></router-link>
+	   	 <li><a href="applicationjob.html"><img src="http://qiniu.bestpiaopiao.cn/ph.png" width="45"><span>配货员</span><i class="mint-cell-allow-right"></i></a></li>
+	   	 <li><a href="applicationjob.html"><img src="http://qiniu.bestpiaopiao.cn/lz.png" width="45"><span>招募楼长</span><i class="mint-cell-allow-right"></i></a></li>
+	   	 <li><a href="applicationjob.html"><img src="http://qiniu.bestpiaopiao.cn/brand.png" width="45"><span>我要加盟</span><i class="mint-cell-allow-right"></i></a></li>
+	   	 <li><a href="applicationjob.html"><img src="http://qiniu.bestpiaopiao.cn/qd.png" width="45"><span>敬请期待</span><i class="mint-cell-allow-right"></i></a></li>
 	   </ul>
 	</div>
 </template>

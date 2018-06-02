@@ -4,7 +4,7 @@
             <div class="serach">
                 <span class="title">宝贝</span>
                 <input type="text" placeholder="请输入搜索内容">
-                <img class="serachimg" src="../../img/serach.png" alt="" width="20px">
+                <img class="serachimg" src="http://qiniu.bestpiaopiao.cn/serach.png" alt="" width="20px">
 
             </div>
         </header>

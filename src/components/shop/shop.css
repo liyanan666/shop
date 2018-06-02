@@ -172,7 +172,7 @@
 	line-height:1
 }
 .demo--radio:checked + .demo--radioInput:after{
-	background: url("../../img/duihao.png") no-repeat;
+	background: url("http://qiniu.bestpiaopiao.cn/duihao.png") no-repeat;
 	-webkit-background-size: contain;
 	background-size: contain;
 	border-radius:100%;content:"";

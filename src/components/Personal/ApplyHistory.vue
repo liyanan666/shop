@@ -7,7 +7,7 @@
         </mt-header>
 		<ul class="application">
 	   	 <li class="clearfix">
-	   	 		<img src="../../img/wl.png" width="45">
+	   	 		<img src="http://qiniu.bestpiaopiao.cn/wl.png" width="45">
 	   	 		<span>
 	   	 			<p>申请“物流员”</p>
 	   	 			<p class="time">2016-01-07 16:34:20</p>
@@ -15,7 +15,7 @@
 	   	 		<i>申请成功</i>
 	   	 </li>
 	   	 <li>
-	   	 		<img src="../../img/ph.png" width="45">
+	   	 		<img src="http://qiniu.bestpiaopiao.cn/ph.png" width="45">
 	   	 		<span>
 	   	 			<p>申请“配送员”</p>
 	   	 			<p class="time">2016-01-07 16:34:20</p>

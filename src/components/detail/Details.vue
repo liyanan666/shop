@@ -12,7 +12,7 @@
                     <img width="100%" height="100%" src="//img.alicdn.com/imgextra/i4/1910146537/TB2EE02g22H8KJjy1zkXXXr7pXa_!!1910146537.jpg_760x760Q50s50.jpg" alt="" />
                 </mt-swipe-item>
             </mt-swipe>
-            <span class="detail_back" @click="back"><img src="../../img/back.png" alt=""></span>
+            <span class="detail_back" @click="back"><img src="http://qiniu.bestpiaopiao.cn/back.png" alt=""></span>
         </div>
         <div class="detail_info">
             <p class="info_title">
@@ -73,7 +73,7 @@
            </div>
             <div class="into_shop">
                 <span class="into_shop_icon">
-                    <img src="../../img/dianpu.png" alt="">
+                    <img src="http://qiniu.bestpiaopiao.cn/dianpu.png" alt="">
                 </span>
                 <span>进入店铺</span>
             </div>
@@ -115,11 +115,11 @@
         </div>
         <ul class="pay">
             <li>
-                <img width="30px" src="../../img/dianpu.png" alt="">
+                <img width="30px" src="http://qiniu.bestpiaopiao.cn/dianpu.png" alt="">
                 <p>进店</p>
             </li>
             <li>
-                <img width="30px" src="../../img/shoucang1.png" alt="">
+                <img width="30px" src="http://qiniu.bestpiaopiao.cn/shoucang1.png" alt="">
                 <p>收藏</p>
             </li>
             <li class="addshopcar">

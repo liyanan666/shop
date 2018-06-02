@@ -11,7 +11,7 @@
             </div>
             <div class="c-comment-list" style="border: 0; padding: 0;">
                 <a class="o-con" href="">
-                    <div class="o-con-img"><img src="../../img/test10.png"></div>
+                    <div class="o-con-img"><img src="http://qiniu.bestpiaopiao.cn/test10.png"></div>
                     <div class="o-con-txt fl">
                         <p>南丰蜜桔 南丰贡桔</p>
                         <p class="price">￥88</p>

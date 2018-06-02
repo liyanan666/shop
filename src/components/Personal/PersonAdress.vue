@@ -10,11 +10,11 @@
         	<li v-for="(item,index) in adress" >
         		<p><span class="name">{{item.Consigneename}}</span><span> {{item.Consigneephone}}</span></p>
         		<p>{{item.areaval}}-{{item.Consigneeadress}}</p>
-        		<img @click="todetailAdress(item)" class="shuru" src="../../img/shuru.png"/>
+        		<img @click="todetailAdress(item)" class="shuru" src="http://qiniu.bestpiaopiao.cn/shuru.png"/>
         	</li>
         </ul>
         <div class="add clearfix" @click="addadress">
-        	<img class="fl" src="../../img/add.png"/>
+        	<img class="fl" src="http://qiniu.bestpiaopiao.cn/add.png"/>
         	<p class="fl">新增收货地址</p>
         </div>
 	</div>

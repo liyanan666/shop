@@ -17,7 +17,7 @@
             <div class="log_btn" @click="login">登录</div>
             <p class="clearfix log_info"><span class="fl"></span><span class="fr" @click="rightnowregist">立即注册</span></p>
             <p class="log_text"><span class="log_line"></span><span class="log_hh">使用合作网站登录</span><span class="log_line"></span></p>
-            <p class="log_icon"><span class="wx"><img src="../../img/weixin.jpg" width="100%" alt=""></span></p>
+            <p class="log_icon"><span class="wx"><img src="http://qiniu.bestpiaopiao.cn/weixin.jpg" width="100%" alt=""></span></p>
 		</div>
 
 

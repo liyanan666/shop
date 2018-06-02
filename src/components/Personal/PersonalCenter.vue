@@ -5,7 +5,7 @@
 				
 			</div>
 			<div class="my_touxiang" >
-				<img src="../../img/touxiang.jpg"/>
+				<img src="http://qiniu.bestpiaopiao.cn/touxiang.jpg"/>
 				
 			</div>
 			<div class="my_name"  v-show="userinfo._id">
@@ -17,15 +17,15 @@
 		
 		<ul class="my_state">
 			<li>
-				<img src="../../img/daifahuo.png"/>
+				<img src="http://qiniu.bestpiaopiao.cn/daifahuo.png"/>
 				<p>待发货</p>
 			</li>
 			<li>
-				<img src="../../img/fahuozhong.png"/>
+				<img src="http://qiniu.bestpiaopiao.cn/fahuozhong.png"/>
 				<p>发货中</p>
 			</li>
 			<li>
-				<img src="../../img/daipingjia.png"/>
+				<img src="http://qiniu.bestpiaopiao.cn/daipingjia.png"/>
 				<p>待评价</p>
 			</li>
 			<li></li>
@@ -33,33 +33,33 @@
 		<div style="margin-top: 0.3rem;margin-bottom:1rem">
 			<div @click="topersoninfo">
 				<mt-cell title="我的资料" :is-link="link">
-				  <img slot="icon" src="../../img/myzl.png" width="24" height="24">
+				  <img slot="icon" src="http://qiniu.bestpiaopiao.cn/myzl.png" width="24" height="24">
 				</mt-cell>
 			</div>
 			<div @click="tobuess">
 				<mt-cell title="成为商家" :is-link="link">
-				  <img slot="icon" src="../../img/shangjia.png" width="24" height="24">
+				  <img slot="icon" src="http://qiniu.bestpiaopiao.cn/shangjia.png" width="24" height="24">
 				</mt-cell>
 			</div>
 			<div @click="isbuess" v-show="userinfo.isbuess == 1">
 				<mt-cell title="我是商家" :is-link="link">
-					<img slot="icon" src="../../img/shangjia.png" width="24" height="24">
+					<img slot="icon" src="http://qiniu.bestpiaopiao.cn/shangjia.png" width="24" height="24">
 				</mt-cell>
 			</div>
 			
 			<div @click="toadress">
 				<mt-cell title="收货地址" :is-link="link">
-				  <img slot="icon" src="../../img/shouhuodizhi.png" width="24" height="24">
+				  <img slot="icon" src="http://qiniu.bestpiaopiao.cn/shouhuodizhi.png" width="24" height="24">
 				</mt-cell>
 			</div>
 			<div @click="work">
 				<mt-cell title="我要兼职" :is-link="link">
-				  <img slot="icon" src="../../img/work.png" width="24" height="24">
+				  <img slot="icon" src="http://qiniu.bestpiaopiao.cn/work.png" width="24" height="24">
 				</mt-cell>
 			</div>
 			<div @click="history">
 				<mt-cell title="申请记录" :is-link="link">
-				  <img slot="icon" src="../../img/fuwuzhongxin.png" width="24" height="24">
+				  <img slot="icon" src="http://qiniu.bestpiaopiao.cn/fuwuzhongxin.png" width="24" height="24">
 				</mt-cell>
 			</div>
 		</div>

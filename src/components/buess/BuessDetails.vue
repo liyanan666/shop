@@ -6,7 +6,7 @@
             </router-link>
         </mt-header>
         <div class="buess_head clearfix">
-            <div class="head_left"><img src="../../img/touxiang.jpg" alt=""></div>
+            <div class="head_left"><img src="http://qiniu.bestpiaopiao.cn/touxiang.jpg" alt=""></div>
             <div class="head_right">
                 <p class="username">{{userinfo.nickname}}</p>
                 <p class="usercode">店铺名：666dasfa</p>
@@ -28,19 +28,19 @@
         <ul class="buess_caozuo clearfix">
         	<li>
                 <router-link to="product">
-                    <div class="icon lv"><img src="../../img/yifabu.png" alt=""></div>
+                    <div class="icon lv"><img src="http://qiniu.bestpiaopiao.cn/yifabu.png" alt=""></div>
                     <p>已发布商品</p>
                 </router-link>
            </li>
             <li>
                 <router-link to="addproduct">
-                    <div class="icon blue"><img src="../../img/fabushangpin2.png" alt=""></div>
+                    <div class="icon blue"><img src="http://qiniu.bestpiaopiao.cn/fabushangpin2.png" alt=""></div>
                     <p>发布商品</p>
                 </router-link>
             </li>
             
             <li>
-                <div class="icon juhuang"><img src="../../img/dingdanguanli.png" alt=""></div>
+                <div class="icon juhuang"><img src="http://qiniu.bestpiaopiao.cn/dingdanguanli.png" alt=""></div>
                 <p>订单管理</p>
             </li>
             <li></li>
