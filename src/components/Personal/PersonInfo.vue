@@ -17,7 +17,7 @@
 			<div class="myheader">
 				<span class="header_title">我的头像</span>
 				<span>
-					<uploadImg :token="qiniu.token" :domain="qiniu.domain"></uploadImg>
+					<uploadImg :token="qiniu.token" :domain="qiniu.domain" @imgUrl="getImgurl"></uploadImg>
 				</span>
 			</div>
 			<div @click="collageVisible=true"> 
@@ -52,7 +52,7 @@
                	nickname:'',
                 phone:'',
                 sex:'男',
-                headportrait: 'http://qiniu.bestpiaopiao.cn/upload.png',
+                headportrait: '',
                 school:'',
                 introduction:'',
                 userinfo:{},
@@ -119,6 +119,9 @@
             uploadfile:function(){
             	this.GLOBAL.uploadImg(event.target);
             },
+            getImgurl:function(val){
+            	this.headportrait = val;
+            },
             savesex:function () {
                 this.sex = this.pickersex;
                 this.sexVisible = false;
@@ -145,7 +148,7 @@
             	}
             	datainfo = JSON.stringify(datainfo);
             	$.ajax({ 
-					url:""+_this.GLOBAL.host+"/changeuserinfo",
+					url:""+_this.GLOBAL.host+"/user/changeuserinfo",
 					type : 'POST', 
 					data : {
 						id:_this.userinfo._id,

@@ -35,6 +35,7 @@
 					},
 					complete(res) {
 						_this.headportrait = 'http://'+imgLink;
+						_this.$emit('imgUrl',_this.headportrait);
 						
 					}
 				}) // 上传开始
