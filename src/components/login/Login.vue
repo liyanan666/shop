@@ -53,6 +53,7 @@
             				return;
             			}else{
             				localStorage.setItem("userinfo",JSON.stringify(data.info));
+            				localStorage.setItem("token",data.token);
             				_this.$router.push('/index');
             			}
             			

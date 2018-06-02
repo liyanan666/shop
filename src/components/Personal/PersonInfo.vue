@@ -17,10 +17,7 @@
 			<div class="myheader">
 				<span class="header_title">我的头像</span>
 				<span>
-					<a href="javascript:;" class="a-upload">
-						<img :src="headportrait"/>
-					    <input @change="uploadfile" type="file" name="" id="" accept="image/*"  />
-					</a>
+					<uploadImg :token="qiniu.token" :domain="qiniu.domain"></uploadImg>
 				</span>
 			</div>
 			<div @click="collageVisible=true"> 
@@ -45,6 +42,7 @@
 
 <script>
     import { MessageBox,Popup,Picker } from 'mint-ui';
+    import uploadImg from '../public/uploadImg.vue';
     export default {
         data() {
             return {
@@ -54,7 +52,7 @@
                	nickname:'',
                 phone:'',
                 sex:'男',
-                headportrait: '../../src/img/upload.png',
+                headportrait: 'http://qiniu.bestpiaopiao.cn/upload.png',
                 school:'',
                 introduction:'',
                 userinfo:{},
@@ -76,11 +74,12 @@
                         textAlign: 'center'
                     }
                 ],
+                qiniu:{}
             }
         },
         mounted:function(){
         	this.userinfo = JSON.parse(localStorage.getItem("userinfo")) || '';
-        	console.log(this.userinfo);
+        	this.qiniu = this.GLOBAL.qiniu;
         	if(this.userinfo){
         		this.username = this.userinfo.username;
         		this.sex = this.userinfo.sex || '男';
@@ -88,11 +87,14 @@
         		this.phone = this.userinfo.phone;
         		this.school = this.userinfo.school;
         		this.introduction = this.userinfo.introduction;
-        		this.headportrait = this.userinfo.headportrait || '../../src/img/upload.png';
+//      		this.headportrait = this.userinfo.headportrait || 'http://qiniu.bestpiaopiao.cn/upload.png';
         	}
         },
+        components:{
+        	uploadImg
+        },
         methods: {
-            changename(){
+            changename:function(){
                 MessageBox.prompt('', {
                     message: '请输入昵称？',
                     showInput:true,
@@ -108,41 +110,14 @@
 
                 });
             },
-            onsexChange(picker, values) {
+            onsexChange:function(picker, values) {
                 this.pickersex = values.toString();
             },
-            onCollageChange(picker, values){
+            onCollageChange:function(picker, values){
                 this.pickercollage = values.toString();
             },
-            uploadfile(){
-            	var _this = this;
-            	
-            	var file = event.target.files[0];  
-            	if (window.FileReader) {  
-		            var reader = new FileReader();  
-		            reader.readAsDataURL(file);  
-		            //监听文件读取结束后事件  
-		            reader.onloadend = function (e) {
-		            	var formData = new FormData();
-						formData.append('file',file);
-		            	console.log(formData)
-						$.ajax({ 
-							url:""+_this.GLOBAL.host+"/uploadimg",
-							type : 'POST', 
-							data : formData,
-							// 告诉jQuery不要去处理发送的数据
-							processData : false, 
-							// 告诉jQuery不要去设置Content-Type请求头
-							contentType : false,
-							success : function(data) { 
-								_this.headportrait = data.url;
-							}, 
-							error : function(responseStr) { 
-								console.log("error");
-							} 
-						});
-		            };  
-		        }  
+            uploadfile:function(){
+            	this.GLOBAL.uploadImg(event.target);
             },
             savesex:function () {
                 this.sex = this.pickersex;
@@ -239,6 +214,9 @@
     }
     .myheader .header_title{
     	width: 105px;
+    }
+    .mint-cell-value textarea{
+    	border: 1px solid #f2f2f2;
     }
     .a-upload {
 	    width: 1.3rem;
