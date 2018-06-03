@@ -56,9 +56,9 @@
 
 <style>
 	.adress_content li{
-		padding: .3rem .2rem;
+		padding: 10px;
 		background: #fff;
-		margin-bottom: .1rem;
+		margin-bottom: 5px;
 		border-bottom: 1px solid #D9D9D9;
 		position: relative;
 	}
@@ -67,18 +67,22 @@
 		font-weight: bold;
 	}
 	.adress_content li p:nth-of-type(1){
-		font-size: .3rem;
-		line-height: .5rem;
+		font-size: 16px;
+	}
+	.adress_content li p:nth-of-type(2){
+		margin-top: 6px;
+		font-size: 14px;
 	}
 	.adress_content li .shuru{
-		width: .4rem;
-		height: .4rem;
+		width: 30px;
+		height: 30px;
 		position: absolute;
-		right: .2rem;
+		right: 15px;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 	.add{
+		max-width: 640px;
 		background: #fff;
 		position: fixed;
 		bottom: 0;
@@ -86,14 +90,15 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: .2rem 0;
+		padding: 10px 0;
+		border: 1px solid #f2f2f2;
 	}
 	.add img{
-		width: .5rem;
-		height: .5rem;
+		width: 30px;
+		height: 30px;
 	}
 	.add p{
-		font-size: .3rem;
-		margin-left: .2rem;
+		font-size: 16px;
+		margin-left: 15px;
 	}
 </style>

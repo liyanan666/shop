@@ -103,7 +103,7 @@
 				if(this.adressdetail._id){
 					$.ajax({
 						type:"post",
-						url:""+_this.GLOBAL.host+"/updateadress",
+						url:""+_this.GLOBAL.host+"/user/updateadress",
 						async:true,
 						data:{
 							id:_this.userinfo._id,
@@ -120,7 +120,7 @@
 				}else{
 					$.ajax({
 						type:"post",
-						url:""+_this.GLOBAL.host+"/saveadress",
+						url:""+_this.GLOBAL.host+"/user/saveadress",
 						async:true,
 						data:{
 							id:_this.userinfo._id,
@@ -141,7 +141,7 @@
 				var _this = this;
 				$.ajax({
 					type:"post",
-					url:""+_this.GLOBAL.host+"/delateadress",
+					url:""+_this.GLOBAL.host+"/user/delateadress",
 					async:true,
 					data:{
 						id:_this.userinfo._id,

@@ -1,14 +1,11 @@
 <template>
 	<div class="my_body">
 		<div class="my_head">
-			<div class="my_back">
-				
-			</div>
-			<div class="my_touxiang" >
-				<img src="http://qiniu.bestpiaopiao.cn/touxiang.jpg"/>
-				
-			</div>
-			<div class="my_name"  v-show="userinfo._id">
+			<img class="my_back" src="http://qiniu.bestpiaopiao.cn/my_background.jpg"/>
+			
+			
+			<div class="my_name">
+				<img class="my_touxiang" :src="headPic"/>
 				<p>{{userinfo.nickname}}</p>
 			</div>
 			
@@ -30,7 +27,7 @@
 			</li>
 			<li></li>
 		</ul>
-		<div style="margin-top: 0.3rem;margin-bottom:1rem">
+		<div style="margin-top: 10px;margin-bottom:1rem">
 			<div @click="topersoninfo">
 				<mt-cell title="我的资料" :is-link="link">
 				  <img slot="icon" src="http://qiniu.bestpiaopiao.cn/myzl.png" width="24" height="24">
@@ -74,6 +71,7 @@
         data() {
             return {
                 link:true,
+                headPic:'http://qiniu.bestpiaopiao.cn/touxiang.jpg',
                 userinfo:{}
             }
         },
@@ -84,6 +82,7 @@
         	if(localStorage.getItem("userinfo")){
         		this.userinfo = JSON.parse(localStorage.getItem("userinfo"));
         		console.log(this.userinfo);
+        		this.headPic = this.userinfo.headportrait;
 				if(!this.userinfo.nickname){
 					this.userinfo.nickname = this.userinfo.username;
 				}
@@ -94,11 +93,7 @@
         methods: {
             tobuess:function () {
             	this.$router.push('/tobuess');
-//          	if(this.userinfo._id){
-//          		
-//          	}else{
-//          		MessageBox("提示","请先登陆");
-//          	}
+
             },
             topersoninfo:function () {
             	var _this = this;

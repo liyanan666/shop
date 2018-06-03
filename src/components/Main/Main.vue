@@ -7,10 +7,10 @@
         <div class="index_banner">
         	<mt-swipe :auto="4000">
 			  <mt-swipe-item>
-			  	<img src="http://qiniu.bestpiaopiao.cn/timg.jpg" width="100%"/>
+			  	<img src="http://qiniu.bestpiaopiao.cn/timg.jpg" width="100%" height="200px"/>
 			  </mt-swipe-item>
-			  <mt-swipe-item><img src="http://qiniu.bestpiaopiao.cn/timg.jpg" width="100%"/></mt-swipe-item>
-			  <mt-swipe-item><img src="http://qiniu.bestpiaopiao.cn/timg.jpg" width="100%"/></mt-swipe-item>
+			  <mt-swipe-item><img src="http://qiniu.bestpiaopiao.cn/timg.jpg" width="100%" height="200px"/></mt-swipe-item>
+			  <mt-swipe-item><img src="http://qiniu.bestpiaopiao.cn/timg.jpg" width="100%" height="200px"/></mt-swipe-item>
 			</mt-swipe>
         </div>
         <div class="index_nav">
@@ -113,7 +113,7 @@
 
 <style>
 	.index_banner{
-		height:181px;
+		height:200px;
 	}
 
 </style>

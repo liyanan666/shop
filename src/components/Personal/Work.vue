@@ -42,6 +42,7 @@
 
 <style scoped="scoped">
 .work{
+	max-width: 640px;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -53,10 +54,10 @@
 .job li {
     background: #fff;
     margin-top: 10px;
-    padding: 0.2rem .5rem;
+    padding: 10px 15px;
     overflow: hidden;
 	position: relative;
-	font-size: .3rem;
+	font-size: 16px;
 }
 .job li a {
     color: #2e2e2e;
@@ -68,12 +69,12 @@
 .job li span {
     float: left;
     margin-left: 2%;
-    margin-top: 0.3rem;
+    margin-top: 15px;
 }
 .job li .am-icon-angle-right {
     float: right;
     font-style: normal;
-    margin-top: 0.3rem;
+    margin-top:  15px;
 }
 .am-close, .am-icon-btn, [class*=am-icon-] {
     display: inline-block;

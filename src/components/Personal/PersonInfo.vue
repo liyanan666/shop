@@ -17,7 +17,7 @@
 			<div class="myheader">
 				<span class="header_title">我的头像</span>
 				<span>
-					<uploadImg :token="qiniu.token" :domain="qiniu.domain" @imgUrl="getImgurl"></uploadImg>
+					<uploadImg :imgPic="headportrait" :token="qiniu.token" :domain="qiniu.domain" @imgUrl="getImgurl"></uploadImg>
 				</span>
 			</div>
 			<div @click="collageVisible=true"> 
@@ -81,13 +81,13 @@
         	this.userinfo = JSON.parse(localStorage.getItem("userinfo")) || '';
         	this.qiniu = this.GLOBAL.qiniu;
         	if(this.userinfo){
-        		this.username = this.userinfo.username;
+        		this.username = this.userinfo.username || '';
         		this.sex = this.userinfo.sex || '男';
-        		this.nickname = this.userinfo.nickname;
-        		this.phone = this.userinfo.phone;
+        		this.nickname = this.userinfo.nickname ||'';
+        		this.phone = this.userinfo.phone || '';
         		this.school = this.userinfo.school;
-        		this.introduction = this.userinfo.introduction;
-//      		this.headportrait = this.userinfo.headportrait || 'http://qiniu.bestpiaopiao.cn/upload.png';
+        		this.introduction = this.userinfo.introduction || '';
+        		this.headportrait = this.userinfo.headportrait || 'http://qiniu.bestpiaopiao.cn/upload.png';
         	}
         },
         components:{
@@ -180,13 +180,12 @@
 	}
     .perinfobtn{
         width: 90%;
-        height:.8rem;
+        padding: 15px;
         background: #D90A00;
-        margin: 1rem auto;
+        margin: 20px auto;
         border-radius: 8px;
         color: #fff;
         text-align: center;
-        line-height: .8rem;
         font-size: 18px;
     }
     .popupheader{
@@ -207,7 +206,6 @@
         width: 100%;
     }
     .myheader{
-    	height: 2rem;
     	display: flex;
     	align-items: center;
     	padding: 0 10px;
@@ -222,8 +220,8 @@
     	border: 1px solid #f2f2f2;
     }
     .a-upload {
-	    width: 1.3rem;
-	    height: 1.3rem;
+	    width: 100px;
+	    height: 100px;
 	    line-height: 20px;
 	    position: relative;
 	    cursor: pointer;

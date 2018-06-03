@@ -74,7 +74,6 @@ a:active {star:expression(this.onFocus=this.blur());}
     line-height: 40px;
 }
 .index_header{
-	height: 0.8rem;
 	position: fixed;
 	background: #D90A00;
 	width: 100%;
@@ -84,12 +83,13 @@ a:active {star:expression(this.onFocus=this.blur());}
 	justify-content: center;
 	z-index: 30;
 	color: #fff;
-	font-size: 0.3rem;
+	
 	max-width: 640px;
+	padding: 10px 0;
 }
 .index_header .header_input{
 	border: none;
-	font-size: .3rem;
+	font-size: 16px;
 	background: rgba(0,0,0,0);
 	text-align: center;
 	color: #fff;

@@ -10,10 +10,13 @@
 	export default{
 		data(){
 			return {
-				headportrait:'http://qiniu.bestpiaopiao.cn/upload.png'
+				headportrait:''
 			}
 		},
-		props:['token','domain'],
+		props:['token','domain','imgPic'],
+		mounted:function(){
+			this.headportrait = this.imgPic;
+		},
 		methods:{
 			uploadfile:function(){
 				var _this = this;
