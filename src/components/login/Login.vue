@@ -53,10 +53,10 @@
             				return;
             			}else{
             				localStorage.setItem("userinfo",JSON.stringify(data.info));
+            				localStorage.setItem("userid",data.info._id);
             				localStorage.setItem("token",data.token);
             				_this.$router.push('/index');
             			}
-            			
             		}
             	})
             }

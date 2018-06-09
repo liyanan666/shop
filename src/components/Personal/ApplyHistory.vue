@@ -6,42 +6,65 @@
             </router-link>
         </mt-header>
 		<ul class="application">
-	   	 <li class="clearfix">
+	   	 <li class="clearfix" v-for="item in applyList">
 	   	 		<img src="http://qiniu.bestpiaopiao.cn/wl.png" width="45">
 	   	 		<span>
-	   	 			<p>申请“物流员”</p>
-	   	 			<p class="time">2016-01-07 16:34:20</p>
+	   	 			<p>申请成为“{{item.applyname}}”</p>
+	   	 			<p class="time">{{item.create_at |formitdata}}</p>
 	   	 		</span>
-	   	 		<i>申请成功</i>
+	   	 		<i>{{item.status | fileterstatus}}</i>
 	   	 </li>
-	   	 <li>
-	   	 		<img src="http://qiniu.bestpiaopiao.cn/ph.png" width="45">
-	   	 		<span>
-	   	 			<p>申请“配送员”</p>
-	   	 			<p class="time">2016-01-07 16:34:20</p>
-	   	 		</span>
-	   	 		<i>申请中</i>
-	   	 </li>
+	   	
 	   	
 	   </ul>
 	</div>
 </template>
 
 <script>
+	import Vue from 'vue';
 	import { MessageBox,Popup,Picker } from 'mint-ui';
-	import { mapState } from 'vuex'
+	import { mapState } from 'vuex';
+	Vue.filter('fileterstatus',function(val){
+		switch (val){
+			case 0:
+				return '申请中'
+				break;
+			case 1:
+				return '申请成功'
+				break;
+			case 2:
+				return '申请失败'
+				break;
+			default:
+				break;
+		}
+	})
 	export default{
 		data(){
 			return{
-				
+				userid:localStorage.getItem("userid") || '',
+				applyList:[]
 			}
 			
 		},
-		computed:{
-		
-		},
 		mounted:function(){
-			
+			var _this =this;
+        	$.ajax({
+        		type:"get",
+        		url:""+this.GLOBAL.host+"/user/applylist",
+        		async:true,
+        		data:{
+        			userid : this.userid
+        		},
+        		success:function(data){
+        			if(data.code == -1){
+        				MessageBox('提示', data.info);
+        				return;
+        			}else{
+        				_this.applyList = data.data;
+        			}
+        		}
+        	})
 		},
 		
 		methods:{

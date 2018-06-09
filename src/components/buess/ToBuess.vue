@@ -46,23 +46,14 @@
             <div class="log_regist">
                 <span class="usr_name" style="border-right: none">店铺Logo</span>
                 <span class="usr_input">
-					<a href="javascript:;" class="a-upload">
-						<img :src="data.buesslogo"/>
-					    <input @change="uploadimg(0)" type="file" name="" id="" accept="image/*"  />
-					</a>
+					<uploadImg :imgPic="uploadPic" data-index = "1" :token="qiniu.token" :domain="qiniu.domain" @imgUrl="getImgurl"></uploadImg>
 				</span>
             </div>
             <div class="log_regist">
                 <span class="usr_name" style="border-right: none;line-height: normal;margin-top: 0.3rem;">身份证照片</span>
                 <span class="usr_input">
-                    <a href="javascript:;" class="a-upload">
-						<img :src="data.buessidPhoto[0]"/>
-					    <input @change="uploadimg(1)" type="file" name="" id="" accept="image/*"  />
-					</a>
-                    <a href="javascript:;" class="a-upload">
-						<img :src="data.buessidPhoto[1]"/>
-					    <input @change="uploadimg(2)" type="file" name="" id="" accept="image/*"  />
-					</a>
+                    <uploadImg data-index = "2" :imgPic="uploadPic" :token="qiniu.token" :domain="qiniu.domain" @imgUrl="getidImgurl1"></uploadImg>
+                    <uploadImg data-index = "3" :imgPic="uploadPic" :token="qiniu.token" :domain="qiniu.domain" @imgUrl="getidImgurl2"></uploadImg>
                 </span>
             </div>
             <div class="log_btn" @click="regiest">确认注册</div>
@@ -79,6 +70,7 @@
 	import schoolSelect from '../public/SchoolSelect.vue'
 	import sexSelect from '../public/SexSelect.vue'
 	import dataTime from '../public/DataTime.vue'
+	import uploadImg from '../public/uploadImg.vue';
     export default{
         data(){
             return {
@@ -96,9 +88,11 @@
 	                buessidNumber:'',
 	                buessschool:'郑州科技学院',
 	                buessintroduction:'',
-	                buesslogo:'../../src/img/upload.png',
-	                buessidPhoto:['../../src/img/upload.png','../../src/img/upload.png'],
-            	}
+	                buesslogo:'',
+	                buessidPhoto:['',''],
+            	},
+            	uploadPic:'http://qiniu.bestpiaopiao.cn/upload.png',
+            	qiniu:this.GLOBAL.qiniu
             }
         },
         mounted:function(){
@@ -107,11 +101,17 @@
         components:{
         	schoolSelect,
         	sexSelect,
-        	dataTime
+        	dataTime,
+        	uploadImg
         },
         methods:{
         	regiest(){
         	    var _this = this;
+        	    var userid = this.userInfo._id;
+        		if(!userid){
+        			MessageBox("提示","请先登录")
+			       	return; 
+        		}
         		var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;  
         		if(reg.test(this.data.buessidNumber) === false)  
 			   	{  
@@ -122,9 +122,13 @@
 			   		MessageBox("提示","请输入正确的手机号")
 			       	return;  
 			   	}
+			   	for(var key in this.data){
+			   		if(!this.data[key]){
+			   			MessageBox("提示","请完善信息")
+			       		return; 
+			   		}
+			   	}
         		
-        		var userid = this.userInfo._id;
-        		console.log(userid);
         		var userdata = JSON.stringify(this.data);
         		$.ajax({
         			type:"post",
@@ -142,7 +146,6 @@
         					_this.$router.push('/personal');
         				}else{
         					MessageBox("提示",data.info);
-        					
         				}
         			}
         		});
@@ -166,47 +169,14 @@
         		}
         		this.isshowtime = false;
         	},
-        	uploadimg(index){
-        		console.log(index);
-        		var _this = this;
-            	var file = event.target.files[0];  
-            	if (window.FileReader) {  
-		            var reader = new FileReader();  
-		            reader.readAsDataURL(file);  
-		            //监听文件读取结束后事件  
-		            reader.onloadend = function (e) {
-		            	var formData = new FormData();
-						formData.append('file',file);
-		            	console.log(formData)
-						$.ajax({ 
-							url:""+_this.GLOBAL.host+"/uploadimg",
-							type : 'POST', 
-							data : formData,
-							// 告诉jQuery不要去处理发送的数据
-							processData : false, 
-							// 告诉jQuery不要去设置Content-Type请求头
-							contentType : false,
-							success : function(data) { 
-								switch (index){
-									case 0:
-										_this.data.buesslogo = data.url;
-										break;
-									case 1:
-										_this.data.buessidPhoto[0] = data.url;
-										break;
-									case 2:
-										_this.data.buessidPhoto[1] = data.url;
-										break;
-									default:
-										break;
-								}
-							}, 
-							error : function(responseStr) { 
-								console.log("error");
-							} 
-						});
-		            };  
-		        }  
+        	getImgurl:function(val){
+        		this.data.buesslogo = val;
+        	},
+        	getidImgurl1:function(val){
+        		this.data.buessidPhoto[0] = val;
+        	},
+        	getidImgurl2:function(val){
+        		this.data.buessidPhoto[1] = val;
         	}
         }
     }
